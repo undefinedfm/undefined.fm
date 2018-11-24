@@ -7,9 +7,8 @@
   "scripts": {
     "start": "gatsby develop",
     "postinstall": "yarn build",
-    "build": "gatsby build --prefix-links && cp now.json public/now.json",
-    "test": "echo \"yay\"",
-    "build-formik": "node ./build.js"
+    "build": "gatsby build --prefix-links",
+    "test": "echo \"yay\""
   },
   "dependencies": {
     "@types/qs": "^6.5.1",
