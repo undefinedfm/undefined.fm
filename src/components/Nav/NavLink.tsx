@@ -10,6 +10,7 @@ export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {
       props={{ ref: hostRef }}
       textDecoration="none"
       fontWeight="500"
+      margin=".5rem"
       color="#C86DD7"
       textTransform="uppercase"
       fontSize=".9rem"

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { theme } from '../theme';
-import { Row, Block } from 'glamor/jsxstyle';
+import { Row, Block, Column } from 'glamor/jsxstyle';
 import { NavLink } from './Nav/NavLink';
 import { LINKS } from '../constants';
 
@@ -15,16 +15,22 @@ export const Footer: React.SFC<FooterProps> = props => {
       padding="4rem 2rem"
       textAlign="center"
     >
-      <Row
+      <Column
         margin="0 auto 2rem"
-        maxWidth={500}
-        alignItems="center"
-        justifyContent="space-between"
+        maxWidth={400}
+        css={{
+          [theme.media.medium]: {
+            maxWidth: 540,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          },
+        }}
       >
         {LINKS.map(item => (
           <NavLink key={`footer-${item.text}`} {...item} />
         ))}
-      </Row>
+      </Column>
       <Block fontSize=".8rem" color={theme.color.gray}>
         Copyright © 2018 The Palmer Group.
       </Block>
