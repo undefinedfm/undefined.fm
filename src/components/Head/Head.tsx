@@ -50,11 +50,11 @@ export const Head: React.SFC<HeadProps> = ({
           },
           {
             name: 'twitter:image',
-            content: '/og_image.png',
+            content: 'https://theundefined.io/og_image.png',
           },
           {
             name: 'og:image',
-            content: '/og_image.png',
+            content: 'https://theundefined.io/og_image.png',
           },
         ].filter(Boolean)}
         {...rest}
