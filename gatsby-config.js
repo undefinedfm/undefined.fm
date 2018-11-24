@@ -2,8 +2,8 @@
 
 module.exports = {
   siteMetadata: {
-    siteName: `Jared Palmer`,
-    siteUrl: `https://jaredpalmer.com`,
+    siteName: `The Undefined Podcast`,
+    siteUrl: `https://theundefined.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://jaredpalmer.com`,
+        siteUrl: `https://theundefined.io`,
       },
     },
     {
@@ -25,13 +25,6 @@ module.exports = {
         color: `#000`,
         // Disable the loading spinner.
         showSpinner: false,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/_posts/`,
-        name: `pages`,
       },
     },
     `gatsby-plugin-sitemap`,
@@ -52,12 +45,12 @@ module.exports = {
       },
     },
     // `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-55176740-4',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-55176740-4',
+    //   },
+    // },
 
     `gatsby-plugin-remove-trailing-slashes`,
   ],
