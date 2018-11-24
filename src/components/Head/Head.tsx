@@ -44,7 +44,7 @@ export const Head: React.SFC<HeadProps> = ({
             name: 'og:description',
             content: description,
           },
-          image && {
+          {
             name: 'twitter:card',
             content: 'summary_large_image',
           },
