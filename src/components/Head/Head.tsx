@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import ogImage from './og_image.png';
 
 export interface HeadProps {
   title?: string;
@@ -51,11 +50,11 @@ export const Head: React.SFC<HeadProps> = ({
           },
           {
             name: 'twitter:image',
-            content: !!image ? image : ogImage,
+            content: '/og_image.png',
           },
           {
             name: 'og:image',
-            content: !!image ? image : ogImage,
+            content: '/og_image.png',
           },
         ].filter(Boolean)}
         {...rest}
