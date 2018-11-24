@@ -44,13 +44,12 @@ module.exports = {
         ],
       },
     },
-    // `gatsby-plugin-catch-links`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: 'UA-55176740-4',
-    //   },
-    // },
+     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-55176740-9',
+       },
+     },
 
     `gatsby-plugin-remove-trailing-slashes`,
   ],
