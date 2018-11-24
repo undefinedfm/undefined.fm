@@ -2,12 +2,11 @@ import * as React from 'react';
 import { css } from 'glamor';
 import '../reset.css';
 import { Logo } from '../components/Logo';
-import { Block, Column, Row, InlineBlock } from 'glamor/jsxstyle';
+import { Block } from 'glamor/jsxstyle';
 import { Formik, Form, FieldProps } from 'formik';
 import axios from 'axios';
 import { theme } from '../theme';
 import { Fieldset } from '../components/Fieldset';
-import { Social } from '../components/Social';
 import { Footer } from '../components/Footer';
 import { Head } from '../components/Head';
 
