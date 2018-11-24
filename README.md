@@ -1,3 +1,5 @@
-# Palmer.net Website
+# The Undefined Website
 
-https://palmer.net
+It's a gatsby site.
+
+Clone. Yarn. Go.
