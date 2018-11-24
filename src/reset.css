@@ -177,6 +177,7 @@ ul code {
 
 .skipnav a:focus,
 .skipnav a:active {
+  color: #fff;
   position: static;
   left: 0;
   width: auto;
