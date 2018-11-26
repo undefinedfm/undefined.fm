@@ -27,6 +27,7 @@
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-glamor": "^2.0.0-alpha.11",
     "gatsby-plugin-google-analytics": "^2.0.0-beta.2",
+    "gatsby-plugin-netlify": "^2.0.5",
     "gatsby-plugin-nprogress": "^2.0.0-beta.3",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
     "gatsby-plugin-react-next": "^2.0.1-9",

@@ -83,7 +83,7 @@ module.exports = {
         trackingId: 'UA-55176740-9',
       },
     },
-
     `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-netlify`,
   ],
 };
