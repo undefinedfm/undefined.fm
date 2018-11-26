@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-source-simplecast-rss",
+  "version": "0.1.0",
+  "description": "Import Simplecast RSS feed data into Gatsby.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://gitlab.com/uptimeventures/gatsby-source-rss.git"
+  },
+  "keywords": [
+    "Gatsby",
+    "feed",
+    "rss",
+    "source"
+  ],
+  "dependencies": {
+    "axios": "0.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

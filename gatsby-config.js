@@ -55,9 +55,19 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `#000`,
+        color: `#C86DD7`,
         // Disable the loading spinner.
         showSpinner: false,
+      },
+    },
+    {
+      // resolve: '@uptimeventures/gatsby-source-rss',
+      // this is our custom fork of @uptimeventures/gatsby-source-rss
+      // it extracts the embed URL out of the vanilla RSS feed.
+      resolve: 'gatsby-source-simplecast-rss',
+      options: {
+        id: 8781,
+        apiKey: process.env.SIMPLECAST_API_KEY,
       },
     },
     `gatsby-plugin-sitemap`,
