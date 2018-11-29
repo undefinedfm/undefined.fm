@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { Toggle, ToggleProps } from './Toggle';
 import { Block } from 'glamor/jsxstyle';
 import { Field, FieldProps } from 'formik';
 import posed from 'react-pose';
-import { PoseBlock } from './PoseView';
 import { theme } from '../theme';
 
 const LabelPoser = posed.label({
