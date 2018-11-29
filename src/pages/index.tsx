@@ -24,9 +24,9 @@ function toSlug(s: string) {
   s = s.replace(/[^a-z0-9-]+/g, '');
   return s;
 }
+
 export default class Home extends React.Component<any, any> {
   render() {
-    console.log(this.props.data.allEpisode.edges);
     return (
       <Block
         css={{
