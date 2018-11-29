@@ -26,7 +26,6 @@ export class Login extends React.Component<LoginProps, LoginState> {
       }).then(
         () => {
           window.localStorage.setItem('ufm-token', this.props.token);
-
           window.location.href = '/app';
         },
         error => {
