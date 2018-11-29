@@ -1,4 +1,5 @@
 // gatsby-config.js
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -70,6 +71,10 @@ module.exports = {
         apiKey: process.env.SIMPLECAST_API_KEY,
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-transformer-remark',
@@ -87,13 +92,13 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-55176740-9',
-      },
-    },
-    `gatsby-plugin-remove-trailing-slashes`,
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-55176740-9',
+    //   },
+    // },
+    // `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-netlify`,
   ],
 };

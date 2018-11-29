@@ -15,7 +15,7 @@ exports.sourceNodes = async ({ actions }, options = {}) => {
   const { data } = await axios(
     `https://api.simplecast.com/v1/podcasts/${id}/episodes.json?api_key=${apiKey}`
   );
-
+  console.log(data);
   data
     .filter(datum => datum.duration != null)
     .forEach(child => {

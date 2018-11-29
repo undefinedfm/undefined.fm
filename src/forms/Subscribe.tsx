@@ -5,34 +5,6 @@ import { Block } from 'glamor/jsxstyle';
 import { Fieldset } from '../components/Fieldset';
 import { theme } from '../theme';
 
-const inputStyles = {
-  appearance: 'none',
-  color: '#fff',
-  fontFamily: 'inherit',
-  fontStyle: 'inherit',
-  verticalAlign: 'baseline',
-  display: 'block',
-  position: 'relative',
-  margin: '0 0 2rem',
-  border: 0,
-  padding: '.5rem 0',
-  background: 'transparent',
-  borderBottom: `1px solid ${theme.color.gray}`,
-  borderRadius: 0,
-  fontSize: 18,
-  lineHeight: '1.55556',
-  outline: 0,
-  zIndex: 2,
-  width: '100%',
-  transition: 'all 200ms ease',
-  '&:focus': {
-    borderBottom: `1px solid ${theme.color.gray}`,
-  },
-  '&:placeholder': {
-    fontSize: 18,
-  },
-};
-
 export function Subscribe() {
   return (
     <Block css={{ maxWidth: 550, margin: '0 auto' }}>
@@ -99,7 +71,7 @@ export function Subscribe() {
                         placeholder: 'Name',
                         required: true,
                       }}
-                      css={inputStyles}
+                      css={theme.inputStyles}
                     />
                   )}
                 />
@@ -116,7 +88,7 @@ export function Subscribe() {
                         placeholder: 'Email',
                         required: true,
                       }}
-                      css={inputStyles}
+                      css={theme.inputStyles}
                     />
                   )}
                 />

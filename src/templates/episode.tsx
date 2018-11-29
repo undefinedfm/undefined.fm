@@ -16,14 +16,26 @@ export default class Episode extends React.Component<any, any> {
           padding: '1rem',
         }}
       >
-        <h1>{episode.title}</h1>
+        <Block
+          css={{
+            color: '#fff',
+            fontWeight: 800,
+            fontSize: '2rem',
+            lineHeight: '1.1',
+          }}
+        >
+          {episode.title}
+        </Block>
         <div>{episode.long_description}</div>
         <iframe
           frameBorder="0"
-          height="330px"
+          height="200px"
           scrolling="no"
           seamless={true}
-          src={`https://simplecast.com/e/${episode.id}?style=large`}
+          src={`${episode.sharing_url.replace(
+            'https://simplecast.com/s/',
+            'https://embed.simplecast.com/'
+          )}?color=f5f5f5`}
           width="100%"
         />
         <Subscribe />
@@ -40,7 +52,7 @@ export const pageQuery = graphql`
       description
       long_description
       number
-      audio_url
+      sharing_url
     }
   }
 `;

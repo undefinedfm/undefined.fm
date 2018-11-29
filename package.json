@@ -5,15 +5,16 @@
   "author": "Jared Palmer <jared@palmer.net>",
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop",
+    "start": "gatsby develop -p 3000",
     "postinstall": "yarn build",
     "build": "gatsby build --prefix-links",
     "test": "echo \"yay\""
   },
   "dependencies": {
     "@types/qs": "^6.5.1",
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
+    "@types/reach__router": "^1.2.2",
+    "@types/react": "^16.7.8",
+    "@types/react-dom": "^16.0.11",
     "@types/react-helmet": "^5.0.6",
     "@types/webpack-env": "^1.13.6",
     "axios": "^0.18.0",
@@ -24,6 +25,7 @@
     "gatsby": "^2.0.0-beta.47",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-canonical-urls": "^2.0.0-beta.2",
+    "gatsby-plugin-create-client-paths": "^2.0.3",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-glamor": "^2.0.0-alpha.11",
     "gatsby-plugin-google-analytics": "^2.0.0-beta.2",
@@ -48,13 +50,11 @@
     "glamor": "^2.20.40",
     "popmotion": "^8.2.2",
     "qs": "^6.5.2",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
     "react-helmet": "^5.2.0",
     "react-media": "^1.8.0",
     "react-pose": "^2.1.2",
-    "request": "^2.87.0",
-    "serve": "^9.2.0",
     "ts-loader": "^4.3.0",
     "tslint": "^5.10.0",
     "typescript": "^2.8.3",
@@ -63,6 +63,7 @@
   "devDependencies": {
     "fs-extra": "^7.0.0",
     "gh-pages": "^1.2.0",
+    "prettier": "^1.15.2",
     "shelljs": "^0.8.2"
   },
   "prettier": {
