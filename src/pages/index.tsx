@@ -94,7 +94,7 @@ export default class Home extends React.Component {
               axios
                 .request({
                   url:
-                    'https://api.formik.io/v1/form/5bf8a927daa4d40001e38e2a/submit',
+                    'https://api.formik.com/v1/form/5bf8a927daa4d40001e38e2a/submit',
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
