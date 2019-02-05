@@ -10,6 +10,7 @@ import { toApiError } from '../utils/api';
 
 export interface LoginProps extends RouteComponentProps {
   token?: string;
+  viewer?: any;
 }
 
 export interface LoginState {}
@@ -19,7 +20,7 @@ export class Login extends React.Component<LoginProps, LoginState> {
     if (this.props.token) {
       Axios.request({
         method: 'GET',
-        url: `${process.env.RAZZLE_API_URL}/v2/member/me`,
+        url: `http://localhost:8080/v1/user/me`,
         headers: {
           Authorization: `Bearer ${this.props.token}`,
         },
