@@ -94,6 +94,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                     marginBottom="2rem"
                     fontWeight="800"
                     fontSize="1.5rem"
+                    textTransform="uppercase"
                     fontStyle="italic"
                     color={theme.color.purple}
                   >
