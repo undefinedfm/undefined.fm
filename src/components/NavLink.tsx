@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { Block } from 'glamor/jsxstyle';
-import { theme } from '../../theme';
+import { theme } from '../theme';
 
 export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {
   return (
@@ -11,7 +11,7 @@ export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {
       textDecoration="none"
       fontWeight="500"
       margin=".5rem"
-      color="#ff50d4"
+      color={theme.color.purple}
       textTransform="uppercase"
       fontSize=".9rem"
       transition="color 200ms ease-in"

@@ -55,8 +55,8 @@ export function LogoMiami({ size, ...props }: LogoMiamiProps) {
         </filter>
       </defs>
       <g transform="translate(-417 -367)" fill="none" fillRule="evenodd">
-        <use fill="#000" filter="url(#prefix__a)" xlinkHref="#prefix__b" />
-        <use fill="#0EF" xlinkHref="#prefix__b" />
+        {/* <use fill="#000" filter="url(#prefix__a)" xlinkHref="#prefix__b" /> */}
+        <use fill="#fff" xlinkHref="#prefix__b" />
       </g>
     </svg>
   );

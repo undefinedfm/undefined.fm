@@ -1,12 +1,41 @@
 import * as React from 'react';
 import { theme } from '../theme';
 import { Row, Block, Column } from 'glamor/jsxstyle';
-import { NavLink } from './Nav/NavLink';
+import { NavLink } from './NavLink';
 import { LINKS } from '../constants';
 import { Container } from './Container';
 import { Formik, Form, FieldProps } from 'formik';
 import axios from 'axios';
 import { Fieldset } from './Fieldset';
+
+const inputStyles = {
+  appearance: 'none',
+  color: '#fff',
+  fontFamily: 'inherit',
+  fontStyle: 'inherit',
+  verticalAlign: 'baseline',
+  display: 'block',
+  position: 'relative',
+  margin: '0 0 2rem',
+  border: 0,
+  padding: '.5rem 0',
+  background: 'transparent',
+  borderBottom: `1px solid ${theme.color.gray}`,
+  borderRadius: 0,
+  fontSize: 18,
+  lineHeight: '1.55556',
+  outline: 0,
+  zIndex: 2,
+  width: '100%',
+  transition: 'all 200ms ease',
+  '&:focus': {
+    borderBottom: `1px solid ${theme.color.gray}`,
+  },
+  '&:placeholder': {
+    fontSize: 18,
+  },
+};
+
 export interface FooterProps {}
 
 export const Footer: React.SFC<FooterProps> = props => {
@@ -53,8 +82,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                   marginBottom="2rem"
                   fontWeight="800"
                   fontStyle="italic"
-                  textTransform="uppercase"
-                  color="#C86DD7"
+                  color={theme.color.purple}
                 >
                   Thanks! We'll keep you posted!
                 </Block>
@@ -65,9 +93,9 @@ export const Footer: React.SFC<FooterProps> = props => {
                     textAlign="center"
                     marginBottom="2rem"
                     fontWeight="800"
+                    fontSize="1.5rem"
                     fontStyle="italic"
-                    textTransform="uppercase"
-                    color="#C86DD7"
+                    color={theme.color.purple}
                   >
                     Subscribe for updates.
                   </Block>
@@ -121,9 +149,11 @@ export const Footer: React.SFC<FooterProps> = props => {
                     fontWeight={theme.bold}
                     transform="translateY(0)"
                     cursor="pointer"
-                    background="#3023AE"
+                    background={theme.color.purple}
                     fontStyle="italic"
-                    backgroundImage="linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%)"
+                    backgroundImage={`linear-gradient(-134deg, ${
+                      theme.color.purple
+                    } 0%, #C86DD7 100%)`}
                     css={{
                       transition: 'all 100ms ease',
                       '&:hover': {
@@ -143,7 +173,7 @@ export const Footer: React.SFC<FooterProps> = props => {
           )}
         </Formik>
         <Column
-          margin="0 auto 2rem"
+          margin="6rem auto 2rem"
           css={{
             [theme.media.medium]: {
               flexDirection: 'row',

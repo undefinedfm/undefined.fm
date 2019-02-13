@@ -44,6 +44,7 @@ export const Fieldset: React.SFC<any> = ({ label, id, render, ...props }) => {
               fontSize=".85rem"
               marginBottom=".5rem"
               letterSpacing=".025em"
+              textAlign="left"
               zIndex="1"
               color={theme.color.gray}
               pose={fieldProps.field.value !== '' ? 'open' : 'closed'}

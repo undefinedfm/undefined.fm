@@ -21,7 +21,7 @@ export default class Episode extends React.Component<any, any> {
           <main>
             <article>
               <header>
-                <h1>{episode.title}</h1>
+                <h1 {...css({ color: theme.color.purple })}>{episode.title}</h1>
                 <p
                   style={{
                     ...scale(-1 / 5),

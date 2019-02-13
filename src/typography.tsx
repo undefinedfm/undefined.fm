@@ -16,8 +16,8 @@ bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
     color: 'hsla(0,100%,100%,0.8)',
   },
   a: {
-    color: '#ff50d4',
-    textDecoration: 'underline',
+    color: theme.color.purple,
+    // textDecoration: 'underline',
   },
 });
 bootstrapTheme.headerColor = 'hsla(0,100%,100%,0.9)';
