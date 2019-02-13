@@ -14,7 +14,7 @@ const shadow = {
 const color = {
   dark: '#1B2125',
   white: '#fff',
-  purple: '#C86DD7',
+  purple: '#DB00FF',
   black: '#000',
   blue: '#80B9FE',
   red: '#CC0000',

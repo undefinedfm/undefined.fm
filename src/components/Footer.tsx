@@ -135,7 +135,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                   <Block
                     component="button"
                     props={{ type: 'submit' }}
-                    color={theme.color.white}
+                    // color={theme.color.white}
                     padding="1rem 1.25rem"
                     minWidth={200}
                     margin="3rem auto"
@@ -149,19 +149,19 @@ export const Footer: React.SFC<FooterProps> = props => {
                     fontWeight={theme.bold}
                     transform="translateY(0)"
                     cursor="pointer"
+                    color="#000"
                     background={theme.color.purple}
                     fontStyle="italic"
                     backgroundImage={`linear-gradient(-134deg, ${
                       theme.color.purple
-                    } 0%, #C86DD7 100%)`}
+                    } 0%, #00FFF4 100%)`}
                     css={{
                       transition: 'all 100ms ease',
                       '&:hover': {
-                        transform: `translateY(-1px)`,
                         boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
                       },
-                      '&:active': {
-                        transform: `translateY(0)`,
+                      '&:hover:active': {
+                        transform: `scale(.98)`,
                       },
                     }}
                   >

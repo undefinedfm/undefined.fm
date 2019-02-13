@@ -20,7 +20,7 @@ export function Nav(props: NavProps) {
           right: 0,
           zIndex: 9999,
           height: 4,
-          backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
+          backgroundImage: `linear-gradient(left, #00FFF4 0%, #DB00FF 100%)`,
         })}
       />
       <div

@@ -86,7 +86,8 @@ export default class Home extends React.Component<any, any> {
                 </h2>
               </Link>
               <div {...css({ color: '#555', marginBottom: rhythm(0.3) })}>
-                {format(node.date, 'MMM D, YYYY')}
+                {format(node.date, 'MMM D, YYYY')} • Episode{' '}
+                {this.props.data.allEpisode.edges.length}
               </div>
               <p>
                 {node.description}
