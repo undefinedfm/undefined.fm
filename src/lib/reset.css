@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+
 body {
 
 
@@ -33,8 +39,8 @@ div[role="group"] {
 }
 
 ::selection {
-  background: #C86DD7;
-  color: #fff;
+  background: #00FFF4;
+  color: #000;
 }
 
 @keyframes zoomScale {

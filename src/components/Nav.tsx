@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 import { Link } from 'gatsby';
 import { rhythm } from '../lib/typography';
+import { theme } from '../lib/theme';
 
 const stripe = {
   top: 0,
@@ -35,6 +36,7 @@ export function Nav() {
             fontFamily: `'Lazer', sans-serif`,
             fontSize: rhythm(1.5),
             textDecoration: 'none',
+            color: theme.color.white,
           })}
         >
           Undefined

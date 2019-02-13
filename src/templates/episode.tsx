@@ -19,22 +19,23 @@ export default class Episode extends React.Component<any, any> {
         <Head title={episode.title} description={episode.description} />
         <Nav />
         <Container>
-          <main>
+          <main {...css({ marginTop: rhythm(1) })}>
             <article>
               <header>
-                <h1 {...css({ color: theme.color.white })}>{episode.title}</h1>
+                <h1 {...css({ color: theme.color.purple })}>{episode.title}</h1>
                 <p
                   style={{
                     ...scale(-1 / 5),
                     display: 'block',
                     marginBottom: rhythm(1),
-                    color: '#fff',
+                    color: theme.color.gray,
+                    textTransform: 'uppercase',
+                    letterSpacing: '.1em',
                   }}
                 >
                   {format(episode.date, 'MMM D, YYYY')}
                 </p>
               </header>
-              <ShareRow title={episode.title} author="theundefinedio" />
               <iframe
                 frameBorder="0"
                 height="200px"

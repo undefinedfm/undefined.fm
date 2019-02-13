@@ -80,8 +80,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                   component="h2"
                   textAlign="center"
                   marginBottom="2rem"
-                  fontWeight="800"
-                  fontStyle="italic"
+                  fontWeight="700"
                   color={theme.color.purple}
                 >
                   Thanks! We'll keep you posted!
@@ -91,12 +90,11 @@ export const Footer: React.SFC<FooterProps> = props => {
                   <Block
                     component="h2"
                     textAlign="center"
-                    marginBottom="2rem"
+                    marginBottom="1rem"
                     fontWeight="700"
                     fontSize="1.5rem"
-                    textTransform="uppercase"
                     // fontStyle="italic"
-                    color={theme.color.purple}
+                    color={theme.color.grayLighter}
                   >
                     Subscribe for updates
                   </Block>
@@ -143,7 +141,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                     display="block"
                     position="relative"
                     textTransform="uppercase"
-                    borderRadius={30}
+                    borderRadius={40}
                     border="0"
                     fontSize="1rem"
                     textAlign="center"

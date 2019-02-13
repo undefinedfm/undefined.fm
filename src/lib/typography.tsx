@@ -6,6 +6,7 @@ import { theme } from '../lib/theme';
 bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
   'h1,h2,h3,h4,h5,h6': {
     lineHeight: 1,
+    letterSpacing: '-.03em',
   },
   'h1,h2,h3,h4': {
     lineHeight: 1.25,
@@ -20,10 +21,10 @@ bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
     textDecoration: 'underline',
   },
 });
-bootstrapTheme.headerColor = 'hsla(0,100%,100%,0.9)';
+bootstrapTheme.headerColor = theme.color.purple;
 bootstrapTheme.bodyColor = 'hsla(0,100%,100%,0.8)';
-bootstrapTheme.headerWeight = 800;
-bootstrapTheme.baseFontSize = '18px';
+bootstrapTheme.headerWeight = 700;
+bootstrapTheme.baseFontSize = '20px';
 bootstrapTheme.bodyFontFamily = [
   'DIN',
   '-apple-system',
@@ -53,7 +54,7 @@ bootstrapTheme.headerFontFamily = [
   'sans-serif',
 ];
 bootstrapTheme.baseLineHeight = 1.55;
-bootstrapTheme.headerLineHeight = 1.4;
+bootstrapTheme.headerLineHeight = 1.1;
 
 const typography = new Typography(bootstrapTheme);
 // Hot reload typography in development.

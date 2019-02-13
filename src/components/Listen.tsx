@@ -95,7 +95,7 @@ export function ActionLink({ src, href, text }: ActionLinkProps) {
       href={href}
       {...css({
         display: 'flex',
-        color: '#fff',
+        color: 'hsla(0,100%,100%,0.8)',
         margin: rhythm(0.25),
         width: 'auto',
         [theme.media.medium]: {
