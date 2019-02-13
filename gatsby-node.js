@@ -1,4 +1,28 @@
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
+exports.onCreateWebpackConfig = ({ config, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new ForkTsCheckerWebpackPlugin({
+        checkSyntacticErrors: true,
+        formatter: 'codeframe',
+        tslint: './tslint.json',
+        watch: './src',
+      }),
+    ],
+    resolve: {
+      alias: {
+        '@components': path.join(__dirname, './src/components'),
+        '@api': path.join(__dirname, './src/api'),
+        '@utils': path.join(__dirname, './src/utils'),
+        '@screens': path.join(__dirname, './src/screens'),
+        '@forms': path.join(__dirname, './src/forms'),
+        '@theme': path.join(__dirname, './src/theme'),
+      },
+    },
+  });
+};
 
 /**
  * Slugify a string
@@ -32,14 +56,13 @@ exports.createPages = ({ graphql, actions }) => {
     const episodeTemplate = path.resolve('./src/templates/episode.tsx');
     const episodeQuery = /* GraphQL */ `
       {
-        allEpisode(sort: { fields: [published_at], order: DESC }, limit: 1000) {
+        allEpisode(sort: { fields: [date], order: DESC }, limit: 1000) {
           edges {
             node {
               id
               number
               title
               description
-              published_at
               fields {
                 slug
               }

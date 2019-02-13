@@ -42,11 +42,11 @@ const createChildren = (nodes, parent, createNode) => {
 
   nodes.forEach(n => {
     const link = select(n, 'link');
-
     children.push(link);
 
     const node = {
       id: link,
+      number: link.replace('http://theundefined.simplecast.fm/', ''),
       title: select(n, 'title'),
       description: select(n, 'description'),
       html: select(n, 'content:encoded'),
@@ -62,7 +62,7 @@ const createChildren = (nodes, parent, createNode) => {
     };
 
     node.internal = {
-      type: 'RSSEntry',
+      type: 'Episode',
       contentDigest: digest(node),
     };
 
@@ -91,6 +91,8 @@ const createFeed = (feed, createNode) => {
 };
 
 module.exports = {
+  select,
   load,
   createFeed,
+  createChildren,
 };

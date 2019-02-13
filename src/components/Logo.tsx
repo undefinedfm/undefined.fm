@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+// tslint:disable
 export const Logo = (props: any) => (
   <svg width={756} height={680} viewBox="0 0 756 680" {...props}>
     <defs>

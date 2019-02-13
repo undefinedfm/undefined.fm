@@ -66,8 +66,7 @@ module.exports = {
       // it extracts the embed URL out of the vanilla RSS feed.
       resolve: 'gatsby-source-simplecast-rss',
       options: {
-        id: 8781,
-        apiKey: process.env.SIMPLECAST_API_KEY,
+        feed: 'https://rss.simplecast.com/podcasts/8781/rss.xml',
       },
     },
     `gatsby-plugin-sitemap`,
@@ -91,6 +90,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-55176740-9',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/typography`,
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,

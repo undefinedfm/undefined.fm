@@ -1,46 +1,62 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Block } from 'glamor/jsxstyle';
-import { Subscribe } from '../forms/Subscribe';
-import { Footer } from '../components/Footer';
+import format from 'date-fns/format';
+
+import { Nav } from '@components/Nav';
+import { theme } from '@theme';
+import { css } from 'glamor';
+import { scale, rhythm } from '../typography';
 
 export default class Episode extends React.Component<any, any> {
   render() {
     const { episode } = this.props.data;
     return (
-      <Block
-        css={{
-          color: '#fff',
-          maxWidth: 800,
-          margin: '0 auto',
-          padding: '1rem',
-        }}
-      >
-        <h1>{episode.title}</h1>
-        <div>{episode.long_description}</div>
-        <iframe
-          frameBorder="0"
-          height="330px"
-          scrolling="no"
-          seamless={true}
-          src={`https://simplecast.com/e/${episode.id}?style=large`}
-          width="100%"
-        />
-        <Subscribe />
-        <Footer />
-      </Block>
+      <>
+        <Nav />
+        <div {...css({ maxWidth: 700, margin: '0 auto', padding: '0 1rem' })}>
+          <main>
+            <article>
+              <header>
+                <h1>{episode.title}</h1>
+                <p
+                  style={{
+                    ...scale(-1 / 5),
+                    display: 'block',
+                    marginBottom: rhythm(1),
+                    color: '#fff',
+                  }}
+                >
+                  {format(episode.date, 'MMM D, YYYY')}
+                </p>
+              </header>
+
+              <iframe
+                frameBorder="0"
+                height="200px"
+                scrolling="no"
+                seamless={true}
+                src={`${episode.embed}?color=f5f5f5`}
+                width="100%"
+              />
+              <div dangerouslySetInnerHTML={{ __html: episode.html }} />
+            </article>
+          </main>
+        </div>
+      </>
     );
   }
 }
+
 export const pageQuery = graphql`
   query($slug: String!) {
     episode(fields: { slug: { eq: $slug } }) {
       id
       title
       description
-      long_description
+      date
+      html
+      embed
       number
-      audio_url
     }
   }
 `;

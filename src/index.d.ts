@@ -5,3 +5,5 @@ declare module 'unfetch';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.svg';
+declare module 'typography';
+declare module 'typography-theme-bootstrap';
