@@ -9,6 +9,7 @@ import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
 import { Container } from '@components/Container';
 import { Head } from '@components/Head/Head';
+import { ShareRow } from '@components/ShareRow';
 
 export default class Episode extends React.Component<any, any> {
   render() {
@@ -33,7 +34,7 @@ export default class Episode extends React.Component<any, any> {
                   {format(episode.date, 'MMM D, YYYY')}
                 </p>
               </header>
-
+              <ShareRow title={episode.title} author="theundefinedio" />
               <iframe
                 frameBorder="0"
                 height="200px"
@@ -43,6 +44,7 @@ export default class Episode extends React.Component<any, any> {
                 width="100%"
               />
               <div dangerouslySetInnerHTML={{ __html: episode.html }} />
+              <ShareRow title={episode.title} author="theundefinedio" />
             </article>
           </main>
           <Footer />

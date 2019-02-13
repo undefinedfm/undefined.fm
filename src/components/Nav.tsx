@@ -1,14 +1,18 @@
 import * as React from 'react';
-import { LogoMiami } from './LogoMiami';
 import { css } from 'glamor';
 import { Link } from 'gatsby';
-import VisuallyHidden from '@reach/visually-hidden';
 import { rhythm } from '../lib/typography';
-import { Listen, PODCAST_LINKS, ActionLink } from './Listen';
-import { theme } from '../lib/theme';
-export interface NavProps {}
 
-export function Nav(props: NavProps) {
+const stripe = {
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 9999,
+  height: 4,
+  backgroundImage: `linear-gradient(left, #00FFF4 0%, #DB00FF 100%)`,
+};
+
+export function Nav() {
   return (
     <div
       style={{
@@ -16,16 +20,7 @@ export function Nav(props: NavProps) {
         width: '100%',
       }}
     >
-      <div
-        {...css({
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 9999,
-          height: 4,
-          backgroundImage: `linear-gradient(left, #00FFF4 0%, #DB00FF 100%)`,
-        })}
-      />
+      <div {...css(stripe)} />
       <div
         {...css({
           padding: 16,
@@ -84,5 +79,3 @@ export function Nav(props: NavProps) {
     </div>
   );
 }
-
-(Nav as any).displayName = 'Nav';

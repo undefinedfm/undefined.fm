@@ -9,6 +9,10 @@ import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
 import { Block } from 'glamor/jsxstyle';
 import { Listen } from '@components/Listen';
+import { IconTwitter } from '@components/IconTwitter';
+import { IconFacebook } from '@components/IconFacebook';
+import { copyToClipboard } from '@components/copyToClipboard';
+import { ShareRow } from '@components/ShareRow';
 
 /**
  * Slugify a string
@@ -94,7 +98,7 @@ export default class Home extends React.Component<any, any> {
                   [theme.media.medium]: { display: 'block' },
                 })}
               />
-
+              <ShareRow author="theundefinedio" />
               {this.props.data.allEpisode.edges.map(
                 ({ node }: any, i: number) => (
                   <div key={`${node.date}${i}-rss`}>
