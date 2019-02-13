@@ -1,6 +1,6 @@
 import React from 'react';
 import 'unfetch';
-
+import './src/reset.css';
 export const shouldUpdateScroll = ({
   prevRouterProps,
   routerProps: {

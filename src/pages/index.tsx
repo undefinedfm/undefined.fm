@@ -1,7 +1,5 @@
 import * as React from 'react';
-import '../reset.css';
 import { graphql, Link } from 'gatsby';
-import { Nav } from '@components/Nav';
 import { Footer } from '@components/Footer';
 import { scale, rhythm } from '../typography';
 import { theme } from '@theme';
