@@ -1,9 +1,6 @@
 import * as React from 'react';
 import '../reset.css';
 import { graphql, Link } from 'gatsby';
-import { Logo } from '../components/Logo';
-
-import { theme } from '../theme';
 import { Nav } from '@components/Nav';
 
 /**

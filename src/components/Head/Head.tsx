@@ -60,6 +60,12 @@ export const Head: React.SFC<HeadProps> = ({
         {...rest}
       >
         {title ? <title>{title}</title> : null}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="The Undefined Podcast RSS"
+          href="https://rss.simplecast.com/podcasts/8781/rss"
+        />
         {children}
       </Helmet>
     </>

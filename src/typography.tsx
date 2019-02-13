@@ -1,5 +1,6 @@
 import Typography from 'typography';
 import bootstrapTheme from 'typography-theme-bootstrap';
+import { theme } from '@theme';
 
 // tslint:disable-next-line:no-shadowed-variable
 bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
@@ -11,8 +12,12 @@ bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
     marginTop: rhythm(1),
     marginBottom: rhythm(1 / 2),
   },
-  p: {
+  'p,ol,ul,li': {
     color: 'hsla(0,100%,100%,0.8)',
+  },
+  a: {
+    color: '#ff50d4',
+    textDecoration: 'underline',
   },
 });
 bootstrapTheme.headerColor = 'hsla(0,100%,100%,0.9)';
