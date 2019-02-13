@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "start": "rm -rf .cache && gatsby develop",
-    "postinstall": "yarn build",
     "build": "rm -rf .cache && gatsby build --prefix-links",
     "test": "echo \"yay\""
   },
