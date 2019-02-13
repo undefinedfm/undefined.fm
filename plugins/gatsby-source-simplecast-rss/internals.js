@@ -37,6 +37,22 @@ const digest = i =>
     .update(JSON.stringify(i))
     .digest('hex');
 
+/**
+ * Slugify a string
+ * @param s Any string
+ */
+function toSlug(s) {
+  if (!s) {
+    return '';
+  }
+  s = s.toLowerCase().trim();
+  s = s.replace(/ & /g, ' and ');
+  s = s.replace(/[ ]+/g, '-');
+  s = s.replace(/[-]+/g, '-');
+  s = s.replace(/[^a-z0-9-]+/g, '');
+  return s;
+}
+
 const createChildren = (nodes, parent, createNode) => {
   const children = [];
 
@@ -45,7 +61,7 @@ const createChildren = (nodes, parent, createNode) => {
     children.push(link);
 
     const node = {
-      id: link,
+      id: toSlug(select(n, 'title')),
       number: link.replace('http://theundefined.simplecast.fm/', ''),
       title: select(n, 'title'),
       description: select(n, 'description'),

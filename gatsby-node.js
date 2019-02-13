@@ -46,7 +46,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/radio/${node.number}`,
+      value: `/radio/${node.id}`,
     });
   }
 };

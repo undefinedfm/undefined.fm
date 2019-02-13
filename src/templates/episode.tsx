@@ -6,14 +6,18 @@ import { Nav } from '@components/Nav';
 import { theme } from '@theme';
 import { css } from 'glamor';
 import { scale, rhythm } from '../typography';
+import { Footer } from '@components/Footer';
+import { Container } from '@components/Container';
+import { Head } from '@components/Head/Head';
 
 export default class Episode extends React.Component<any, any> {
   render() {
     const { episode } = this.props.data;
     return (
       <>
+        <Head title={episode.title} description={episode.description} />
         <Nav />
-        <div {...css({ maxWidth: 700, margin: '0 auto', padding: '0 1rem' })}>
+        <Container>
           <main>
             <article>
               <header>
@@ -35,13 +39,14 @@ export default class Episode extends React.Component<any, any> {
                 height="200px"
                 scrolling="no"
                 seamless={true}
-                src={`${episode.embed}?color=f5f5f5`}
+                src={`${episode.embed}?color=3d3d3d`}
                 width="100%"
               />
               <div dangerouslySetInnerHTML={{ __html: episode.html }} />
             </article>
           </main>
-        </div>
+          <Footer />
+        </Container>
       </>
     );
   }
