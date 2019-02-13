@@ -4,6 +4,8 @@ import { css } from 'glamor';
 import { Link } from 'gatsby';
 import VisuallyHidden from '@reach/visually-hidden';
 import { rhythm } from '../lib/typography';
+import { Listen, PODCAST_LINKS, ActionLink } from './Listen';
+import { theme } from '../lib/theme';
 export interface NavProps {}
 
 export function Nav(props: NavProps) {
@@ -41,7 +43,7 @@ export function Nav(props: NavProps) {
           })}
         >
           Undefined
-          <span
+          {/* <span
             {...css({
               display: 'inline-block',
               marginLeft: '-.25rem',
@@ -50,8 +52,34 @@ export function Nav(props: NavProps) {
           >
             .
           </span>
-          <span {...css({ fontSize: rhythm(1) })}>fm</span>
+          <span {...css({ fontSize: rhythm(1) })}>fm</span> */}
         </Link>
+        {/* <div
+          {...css({
+            display: 'none',
+            [theme.media.medium]: { display: 'flex' },
+          })}
+        >
+          {PODCAST_LINKS.map(i => (
+            <img
+              key={i.href}
+              src={i.src}
+              alt={i.text}
+              {...css({
+                borderRadius: 12,
+                height: 36,
+                display: 'block',
+                width: 36,
+
+                marginRight: '.5rem',
+                boxShadow: `1px 1px 1px #000 inset`,
+                background: '#fff',
+                marginBottom: 0,
+                verticalAlign: 'middle',
+              })}
+            />
+          ))}
+        </div> */}
       </div>
     </div>
   );

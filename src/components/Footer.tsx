@@ -92,13 +92,13 @@ export const Footer: React.SFC<FooterProps> = props => {
                     component="h2"
                     textAlign="center"
                     marginBottom="2rem"
-                    fontWeight="800"
+                    fontWeight="700"
                     fontSize="1.5rem"
                     textTransform="uppercase"
-                    fontStyle="italic"
+                    // fontStyle="italic"
                     color={theme.color.purple}
                   >
-                    Subscribe for updates.
+                    Subscribe for updates
                   </Block>
                   <Fieldset
                     id="name"
@@ -152,7 +152,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                     cursor="pointer"
                     color="#000"
                     background={theme.color.purple}
-                    fontStyle="italic"
+                    // fontStyle="italic"
                     backgroundImage={`linear-gradient(-134deg, ${
                       theme.color.purple
                     } 0%, #00FFF4 100%)`}

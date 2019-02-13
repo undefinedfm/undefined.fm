@@ -1,4 +1,3 @@
-import React from 'react';
 import 'unfetch';
 import './src/lib/reset.css';
 import './src/lib/fonts/fonts.css';

@@ -26,6 +26,27 @@ function toSlug(s: string) {
   return s;
 }
 
+function Header(props: any) {
+  return (
+    <div {...props}>
+      <h1
+        {...css({
+          color: '#fff',
+          [theme.media.medium]: { marginTop: rhythm(2) },
+        })}
+      >
+        The Undefined Podcast
+      </h1>
+      <p {...css({ marginBottom: rhythm(2) })}>
+        Full Stack Developers{' '}
+        <a href="http://twitter.com/jaredpalmer">Jared Palmer</a> and{' '}
+        <a href="http://twitter.com/ken_wheeler">Ken Wheeler</a> talk about
+        software development, JavaScript, React, CSS, developer tooling,
+        crossbows, debauchery, and shenanigans.
+      </p>
+    </div>
+  );
+}
 export default class Home extends React.Component<any, any> {
   render() {
     return (
@@ -40,67 +61,80 @@ export default class Home extends React.Component<any, any> {
             backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
           })}
         />
-
-        <Container>
-          <div {...css({ margin: '0 auto', textAlign: 'center' })}>
-            <Logo
-              size={0.75}
-              {...css({ margin: '2rem auto', height: '100%', width: '100%' })}
-            />
-          </div>
-
-          <h1
-            {...css({
-              color: '#fff',
-              fontWeight: 400,
-              fontSize: '1.25rem',
-              textAlign: 'center',
-              marginBottom: rhythm(4),
-              lineHeight: rhythm(1.25),
-            })}
-          >
-            Full Stack Developers{' '}
-            <a href="http://twitter.com/jaredpalmer">Jared Palmer</a> and{' '}
-            <a href="http://twitter.com/ken_wheeler">Ken Wheeler</a> talk about
-            software development, JavaScript, React, CSS, developer tooling,
-            crossbows, debauchery, and shenanigans.
-          </h1>
-          <div {...css({ marginBottom: rhythm(4) })}>
-            <Listen />
-          </div>
-          {this.props.data.allEpisode.edges.map(({ node }: any, i: number) => (
-            <div key={`${node.date}${i}-rss`}>
-              <Link
-                to={node.fields.slug}
-                aria-label={`View ${node.title}`}
-                style={{ textDecoration: 'none' }}
+        <div
+          {...css({
+            maxWidth: 675,
+            [theme.media.medium]: { maxWidth: 968 },
+            margin: '0 auto',
+            padding: '0 1rem',
+          })}
+        >
+          <div {...css({ [theme.media.medium]: { display: 'flex' } })}>
+            <div {...css({ margin: '0 auto' })}>
+              <div
+                {...css({
+                  textAlign: 'center',
+                  background: '#000',
+                  margin: '2rem auto',
+                  maxWidth: 300,
+                  borderRadius: 16,
+                })}
               >
-                <h2
-                  {...css({
-                    color: theme.color.purple,
-                    marginBottom: rhythm(0.3),
-                    ':hover': {
-                      color: theme.color.purple,
-                      textDecoration: 'underline',
-                    },
-                  })}
-                >
-                  {node.title}
-                </h2>
-              </Link>
-              <div {...css({ color: '#555', marginBottom: rhythm(0.3) })}>
-                {format(node.date, 'MMM D, YYYY')} • Episode{' '}
-                {this.props.data.allEpisode.edges.length}
+                <Logo size={0.4} />
               </div>
-              <p>
-                {node.description}
-                <Link to={node.fields.slug} aria-label={`View ${node.title}`}>
-                  Listen to Episode →
-                </Link>
-              </p>
+              <Header {...css({ [theme.media.medium]: { display: 'none' } })} />
+              <div {...css({ marginBottom: rhythm(2) })}>
+                <Listen />
+              </div>
             </div>
-          ))}
-        </Container>
+            <div {...css({ [theme.media.medium]: { marginLeft: rhythm(2) } })}>
+              <Header
+                {...css({
+                  display: 'none',
+                  [theme.media.medium]: { display: 'block' },
+                })}
+              />
+
+              {this.props.data.allEpisode.edges.map(
+                ({ node }: any, i: number) => (
+                  <div key={`${node.date}${i}-rss`}>
+                    <Link
+                      to={node.fields.slug}
+                      aria-label={`View ${node.title}`}
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <h2
+                        {...css({
+                          color: theme.color.purple,
+                          marginBottom: rhythm(0.3),
+                          ':hover': {
+                            color: theme.color.purple,
+                            textDecoration: 'underline',
+                          },
+                        })}
+                      >
+                        {node.title}
+                      </h2>
+                    </Link>
+                    <div {...css({ color: '#555', marginBottom: rhythm(0.3) })}>
+                      {format(node.date, 'MMM D, YYYY')} • Episode{' '}
+                      {this.props.data.allEpisode.edges.length}
+                    </div>
+                    <p>
+                      {node.description}
+                      <Link
+                        to={node.fields.slug}
+                        aria-label={`View ${node.title}`}
+                      >
+                        Listen to Episode →
+                      </Link>
+                    </p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     );

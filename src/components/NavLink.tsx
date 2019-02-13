@@ -17,7 +17,7 @@ export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {
       transition="color 200ms ease-in"
       css={{
         '&:hover': {
-          color: theme.color.purple,
+          color: theme.color.white,
         },
       }}
       {...props}
