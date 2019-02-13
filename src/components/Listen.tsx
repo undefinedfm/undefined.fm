@@ -96,13 +96,13 @@ export function ActionLink({ src, href, text }: ActionLinkProps) {
       {...css({
         display: 'flex',
         color: 'hsla(0,100%,100%,0.8)',
-        margin: rhythm(0.25),
-        width: 'auto',
-        [theme.media.medium]: {
-          width: '100%',
-          margin: 0,
-          marginBottom: rhythm(0.25),
-        },
+        // margin: rhythm(0.25),
+        // width: 'auto',
+        // [theme.media.medium]: {
+        width: '100%',
+        margin: 0,
+        marginBottom: rhythm(0.25),
+        // },
         alignItems: 'center',
         textDecoration: 'none',
         transition: `background 100ms ease-out`,

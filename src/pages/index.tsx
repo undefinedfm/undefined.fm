@@ -4,12 +4,9 @@ import { Footer } from '@components/Footer';
 import { rhythm, scale } from '../lib/typography';
 import { theme } from '../lib/theme';
 import { css } from 'glamor';
-
 import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
-
 import { Listen } from '@components/Listen';
-
 import { ShareRow } from '@components/ShareRow';
 
 /**
@@ -44,8 +41,8 @@ function Header(props: any) {
         {...css({
           marginBottom: rhythm(1),
           ...scale(0.3),
-          color: '#fff',
-          opacity: 0.98,
+          color: theme.color.grayLightest,
+          opacity: 0.9,
         })}
       >
         {/* Full Stack Developers{' '}
@@ -109,7 +106,7 @@ export default class Home extends React.Component<any, any> {
                 <Logo size={0.39} />
               </div>
               <Header {...css({ [theme.media.medium]: { display: 'none' } })} />
-              <div {...css({ marginBottom: rhythm(2) })}>
+              <div {...css({ marginBottom: rhythm(1) })}>
                 <Listen />
               </div>
             </div>
@@ -124,101 +121,103 @@ export default class Home extends React.Component<any, any> {
                 author="theundefinedio"
                 {...css({ marginBottom: rhythm(2) })}
               />
-              {this.props.data.allEpisode.edges.map(
-                ({ node }: any, i: number) => (
-                  <div key={`${node.date}${i}-rss`}>
-                    <div {...css({ display: 'flex', alignItems: 'center' })}>
-                      <Link
-                        to={node.fields.slug}
-                        aria-label={`View ${node.title}`}
-                        style={{
-                          textDecoration: 'none',
-                        }}
-                        {...css({
-                          '&:hover svg': {
-                            color: theme.color.pink,
-                          },
-                          transition: 'scale 100ms ease-out',
-                          '&:active': {
-                            transform: 'scale(.98)',
-                          },
-                        })}
-                      >
-                        <svg
-                          height="48"
-                          width="48"
-                          version="1.1"
-                          viewBox="0 0 48 48"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlSpace="preserve"
-                          {...css({
-                            verticalAlign: 'middle',
-                            height: 42,
-                            width: 42,
-                            marginRight: rhythm(0.5),
-                            [theme.media.medium]: {
-                              height: 56,
-                              width: 56,
-                            },
-                          })}
-                        >
-                          <title>button circle play</title>
-                          <g fill="currentColor">
-                            <path
-                              // tslint:disable-next-line:max-line-length
-                              d="M24,1C11.317,1,1,11.317,1,24s10.317,23,23,23s23-10.317,23-23S36.683,1,24,1z M32.524,24.852l-13,8 C19.363,32.95,19.182,33,19,33c-0.168,0-0.336-0.042-0.488-0.127C18.196,32.696,18,32.362,18,32V16c0-0.362,0.196-0.696,0.512-0.873 c0.317-0.178,0.703-0.169,1.013,0.021l13,8C32.82,23.33,33,23.652,33,24S32.82,24.67,32.524,24.852z"
-                              fill="currentColor"
-                            />
-                          </g>
-                        </svg>
-                      </Link>
-                      <div {...css({ flex: 1 })}>
-                        <span
-                          {...css({
-                            display: 'block',
-                            color: '#555',
-                            fontSize: rhythm(0.55),
-                            textTransform: 'uppercase',
-                            letterSpacing: '.1em',
-                          })}
-                        >
-                          {format(node.date, 'MMM D, YYYY')} • Episode{' '}
-                          {this.props.data.allEpisode.edges.length}
-                        </span>
+              <div {...css({ marginTop: rhythm(2) })}>
+                {this.props.data.allEpisode.edges.map(
+                  ({ node }: any, i: number) => (
+                    <div key={`${node.date}${i}-rss`}>
+                      <div {...css({ display: 'flex', alignItems: 'center' })}>
                         <Link
                           to={node.fields.slug}
                           aria-label={`View ${node.title}`}
-                          style={{ textDecoration: 'none' }}
+                          style={{
+                            textDecoration: 'none',
+                          }}
+                          {...css({
+                            '&:hover svg': {
+                              color: theme.color.pink,
+                            },
+                            transition: 'scale 100ms ease-out',
+                            '&:active': {
+                              transform: 'scale(.98)',
+                            },
+                          })}
                         >
-                          <h2
+                          <svg
+                            height="48"
+                            width="48"
+                            version="1.1"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlSpace="preserve"
                             {...css({
-                              color: theme.color.purple,
-                              marginTop: 0,
-                              fontSize: rhythm(1),
-                              ':hover': {
-                                color: theme.color.pink,
-                                cursor: 'pointer',
+                              verticalAlign: 'middle',
+                              height: 42,
+                              width: 42,
+                              marginRight: rhythm(0.5),
+                              [theme.media.medium]: {
+                                height: 56,
+                                width: 56,
                               },
                             })}
                           >
-                            {node.title}
-                          </h2>
+                            <title>button circle play</title>
+                            <g fill="currentColor">
+                              <path
+                                // tslint:disable-next-line:max-line-length
+                                d="M24,1C11.317,1,1,11.317,1,24s10.317,23,23,23s23-10.317,23-23S36.683,1,24,1z M32.524,24.852l-13,8 C19.363,32.95,19.182,33,19,33c-0.168,0-0.336-0.042-0.488-0.127C18.196,32.696,18,32.362,18,32V16c0-0.362,0.196-0.696,0.512-0.873 c0.317-0.178,0.703-0.169,1.013,0.021l13,8C32.82,23.33,33,23.652,33,24S32.82,24.67,32.524,24.852z"
+                                fill="currentColor"
+                              />
+                            </g>
+                          </svg>
                         </Link>
+                        <div {...css({ flex: 1 })}>
+                          <span
+                            {...css({
+                              display: 'block',
+                              color: '#555',
+                              fontSize: rhythm(0.55),
+                              textTransform: 'uppercase',
+                              letterSpacing: '.1em',
+                            })}
+                          >
+                            {format(node.date, 'MMM D, YYYY')} • Episode{' '}
+                            {this.props.data.allEpisode.edges.length}
+                          </span>
+                          <Link
+                            to={node.fields.slug}
+                            aria-label={`View ${node.title}`}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <h2
+                              {...css({
+                                color: theme.color.purple,
+                                marginTop: 0,
+                                fontSize: rhythm(1),
+                                ':hover': {
+                                  color: theme.color.pink,
+                                  cursor: 'pointer',
+                                },
+                              })}
+                            >
+                              {node.title}
+                            </h2>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
 
-                    <p>
-                      {node.description}
-                      <Link
-                        to={node.fields.slug}
-                        aria-label={`View ${node.title}`}
-                      >
-                        Listen to Episode →
-                      </Link>
-                    </p>
-                  </div>
-                )
-              )}
+                      <p>
+                        {node.description}
+                        <Link
+                          to={node.fields.slug}
+                          aria-label={`View ${node.title}`}
+                        >
+                          Listen to Episode →
+                        </Link>
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </div>

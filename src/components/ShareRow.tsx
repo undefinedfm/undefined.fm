@@ -16,10 +16,12 @@ export interface ShareRowProps {
 }
 
 const buttonStyles = {
-  padding: `${rhythm(0.4)} ${rhythm(1)}`,
+  padding: `${rhythm(0.3)} ${rhythm(1)}`,
   marginRight: '1rem',
   textDecoration: 'none',
-  border: 0,
+  fontWeight: 700,
+  borderWidth: 1,
+  borderStyle: 'solid',
   borderColor: 'transparent',
   borderRadius: 4,
   color: theme.color.white,
@@ -27,6 +29,7 @@ const buttonStyles = {
   whiteSpace: 'nowrap',
   cursor: 'pointer',
   WebkitAppearance: 'none',
+  fontSize: '.8rem',
   transition: 'all 100ms ease-out',
   '&:hover': {
     opacity: 0.95,
