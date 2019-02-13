@@ -71,6 +71,7 @@
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "fs-extra": "^7.0.0",
     "gh-pages": "^1.2.0",
+    "request-promise": "^4.2.2",
     "shelljs": "^0.8.2",
     "tslint-config-palmerhq": "^1.0.2"
   },
