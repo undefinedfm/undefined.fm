@@ -14,15 +14,14 @@ bootstrapTheme.overrideThemeStyles = ({ rhythm }: any, options: any) => ({
     marginBottom: rhythm(1 / 2),
   },
   'p,ol,ul,li': {
-    color: 'hsla(0,100%,100%,0.8)',
+    color: 'hsla(0,100%,100%,0.9)',
   },
   a: {
     color: theme.color.purple,
-    textDecoration: 'underline',
   },
 });
-bootstrapTheme.headerColor = theme.color.purple;
-bootstrapTheme.bodyColor = 'hsla(0,100%,100%,0.8)';
+bootstrapTheme.headerColor = theme.color.white;
+bootstrapTheme.bodyColor = 'hsla(0,100%,100%,0.9)';
 bootstrapTheme.headerWeight = 700;
 bootstrapTheme.baseFontSize = '20px';
 bootstrapTheme.bodyFontFamily = [

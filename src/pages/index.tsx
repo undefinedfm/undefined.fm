@@ -1,76 +1,18 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Footer } from '@components/Footer';
-import { rhythm, scale } from '../lib/typography';
+import { rhythm } from '../lib/typography';
 import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen';
 import { ShareRow } from '@components/ShareRow';
+import { Header } from '../components/Header';
 
-/**
- * Slugify a string
- * @param s Any string
- */
-function toSlug(s: string) {
-  if (!s) {
-    return '';
-  }
-  s = s.toLowerCase().trim();
-  s = s.replace(/ & /g, ' and ');
-  s = s.replace(/[ ]+/g, '-');
-  s = s.replace(/[-]+/g, '-');
-  s = s.replace(/[^a-z0-9-]+/g, '');
-  return s;
-}
-
-function Header(props: any) {
-  return (
-    <div {...props}>
-      <h1
-        {...css({
-          ...scale(1),
-          color: theme.color.white,
-          [theme.media.medium]: { marginTop: rhythm(2) },
-        })}
-      >
-        The Undefined Podcast
-      </h1>
-      <p
-        {...css({
-          marginBottom: rhythm(1),
-          ...scale(0.3),
-          color: theme.color.grayLightest,
-          opacity: 0.9,
-        })}
-      >
-        {/* Full Stack Developers{' '}
-        <a href="http://twitter.com/jaredpalmer">Jared Palmer</a> and{' '}
-        <a href="http://twitter.com/ken_wheeler">Ken Wheeler</a> talk about
-        software development, JavaScript, React, CSS, developer tooling,
-        crossbows, debauchery, and shenanigans. */}
-        A motherforkin' JavaScript podcast hosted by{' '}
-        <a
-          {...css({ textDecoration: 'none', fontWeight: 700 })}
-          href="http://twitter.com/jaredpalmer"
-        >
-          Jared Palmer
-        </a>{' '}
-        and{' '}
-        <a
-          {...css({ textDecoration: 'none', fontWeight: 700 })}
-          href="http://twitter.com/ken_wheeler"
-        >
-          Ken Wheeler
-        </a>
-        .
-      </p>
-    </div>
-  );
-}
 export default class Home extends React.Component<any, any> {
   render() {
+    console.log(this.props);
     return (
       <div>
         <div
@@ -134,7 +76,7 @@ export default class Home extends React.Component<any, any> {
                           }}
                           {...css({
                             '&:hover svg': {
-                              color: theme.color.pink,
+                              color: '#00FFF4',
                             },
                             transition: 'scale 100ms ease-out',
                             '&:active': {
@@ -180,8 +122,8 @@ export default class Home extends React.Component<any, any> {
                               letterSpacing: '.1em',
                             })}
                           >
-                            {format(node.date, 'MMM D, YYYY')} • Episode{' '}
-                            {this.props.data.allEpisode.edges.length}
+                            {format(node.date, 'MMM D, YYYY')} · Episode{' '}
+                            {node.episodeNumber}
                           </span>
                           <Link
                             to={node.fields.slug}
@@ -194,7 +136,7 @@ export default class Home extends React.Component<any, any> {
                                 marginTop: 0,
                                 fontSize: rhythm(1),
                                 ':hover': {
-                                  color: theme.color.pink,
+                                  color: '#00FFF4',
                                   cursor: 'pointer',
                                 },
                               })}
@@ -235,6 +177,8 @@ export const query = graphql`
           id
           title
           description
+          episodeNumber
+          duration
           date
           fields {
             slug

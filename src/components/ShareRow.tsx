@@ -162,7 +162,7 @@ export function ShareRow(props: ShareRowProps) {
             />
           </g>
         </svg>
-        Copy URL
+        Copy
       </button>
     </div>
   );

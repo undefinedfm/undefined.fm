@@ -177,6 +177,8 @@ export const Footer: React.SFC<FooterProps> = props => {
             [theme.media.medium]: {
               flexDirection: 'row',
               alignItems: 'center',
+              textAlign: 'center',
+              flexWrap: 'wrap',
               justifyContent: 'space-between',
             },
           }}
@@ -185,6 +187,7 @@ export const Footer: React.SFC<FooterProps> = props => {
             <NavLink key={`footer-${item.text}`} {...item} />
           ))}
         </Column>
+        <NavLink text="Sponsor an Episode" href="mailto:hello@undefined.fm" />
         <Block fontSize=".8rem" color={theme.color.gray}>
           Copyright © 2019 The Palmer Group.
         </Block>

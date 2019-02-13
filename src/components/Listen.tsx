@@ -96,20 +96,17 @@ export function ActionLink({ src, href, text }: ActionLinkProps) {
       {...css({
         display: 'flex',
         color: 'hsla(0,100%,100%,0.8)',
-        // margin: rhythm(0.25),
-        // width: 'auto',
-        // [theme.media.medium]: {
         width: '100%',
         margin: 0,
         marginBottom: rhythm(0.25),
-        // },
         alignItems: 'center',
         textDecoration: 'none',
         transition: `background 100ms ease-out`,
         borderRadius: 12,
-        padding: `${rhythm(0.25)} ${rhythm(0.3)}`,
+        padding: `${rhythm(0.25)} ${rhythm(0.5)}`,
         '&:hover': {
           background: '#000',
+          textDecoration: 'none',
         },
       })}
     >
@@ -118,13 +115,9 @@ export function ActionLink({ src, href, text }: ActionLinkProps) {
         alt={text}
         {...css({
           borderRadius: 12,
-          height: 24,
           display: 'block',
-          width: 24,
-          [theme.media.medium]: {
-            height: 40,
-            width: 40,
-          },
+          height: 40,
+          width: 40,
           boxShadow: `1px 1px 1px #000 inset`,
           background: '#fff',
           marginBottom: 0,

@@ -72,6 +72,10 @@ const createChildren = (nodes, parent, createNode) => {
       embed: n.enclosure[0]['$']['url']
         .replace('.mp3', '')
         .replace('audio', 'embed'),
+      audioUrl: n.enclosure[0]['$']['url'],
+      duration: select(n, 'itunes:duration'),
+      keywords: select(n, 'itunes:keywords'),
+      episodeNumber: select(n, 'itunes:episode'),
       link,
       parent,
       children: [],

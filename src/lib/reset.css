@@ -43,6 +43,14 @@ div[role="group"] {
   color: #000;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 @keyframes zoomScale {
   0% {
     transform: translateY(-30px) scale(1.3) rotate(0.02deg);
