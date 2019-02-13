@@ -7,3 +7,4 @@ declare module '*.jpg';
 declare module '*.svg';
 declare module 'typography';
 declare module 'typography-theme-bootstrap';
+declare module '@reach/visually-hidden';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { LogoMiami } from './LogoMiami';
 import { css } from 'glamor';
 import { Link } from 'gatsby';
-
+import VisuallyHidden from '@reach/visually-hidden';
 export interface NavProps {}
 
 export function Nav(props: NavProps) {
@@ -32,6 +32,7 @@ export function Nav(props: NavProps) {
         })}
       >
         <Link to="/">
+          <VisuallyHidden>The Undefined Podcast</VisuallyHidden>
           <LogoMiami size={0.75} />
         </Link>
       </div>

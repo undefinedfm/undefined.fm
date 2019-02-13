@@ -14,6 +14,7 @@
     "@types/react-dom": "^16.0.11"
   },
   "dependencies": {
+    "@reach/visually-hidden": "^0.1.2",
     "@types/qs": "^6.5.1",
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.0.11",
