@@ -24,7 +24,7 @@ bootstrapTheme.headerColor = 'hsla(0,100%,100%,0.9)';
 bootstrapTheme.bodyColor = 'hsla(0,100%,100%,0.8)';
 bootstrapTheme.headerWeight = 800;
 bootstrapTheme.baseFontSize = '18px';
-bootstrapTheme.baseFontFamily = [
+bootstrapTheme.bodyFontFamily = [
   'DIN',
   '-apple-system',
   'BlinkMacSystemFont',
