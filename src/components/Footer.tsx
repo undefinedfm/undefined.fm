@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { theme } from '../theme';
+import { theme } from '../lib/theme';
 import { Row, Block, Column } from 'glamor/jsxstyle';
 import { NavLink } from './NavLink';
-import { LINKS } from '../constants';
+import { LINKS } from '../lib/constants';
 import { Container } from './Container';
 import { Formik, Form, FieldProps } from 'formik';
 import axios from 'axios';

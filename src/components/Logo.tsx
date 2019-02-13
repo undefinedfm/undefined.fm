@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { theme } from '@theme';
+import { theme } from '../lib/theme';
 // tslint:disable
 export const Logo = (props: any) => (
   <svg
-    width={props.size * 756}
-    height={props.size * 680}
+    width={Math.round(props.size * 756)}
+    height={Math.round(props.size * 680)}
     viewBox="0 0 756 680"
     {...props}
   >

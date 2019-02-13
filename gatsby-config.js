@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-next`,
     `gatsby-plugin-glamor`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
@@ -95,7 +94,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/typography`,
+        pathToConfigModule: `src/lib/typography`,
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,

@@ -1,6 +1,8 @@
 import React from 'react';
 import 'unfetch';
-import './src/reset.css';
+import './src/lib/reset.css';
+import './src/lib/fonts/fonts.css';
+
 export const shouldUpdateScroll = ({
   prevRouterProps,
   routerProps: {
@@ -20,14 +22,4 @@ export const shouldUpdateScroll = ({
 
   // otherwise default behavior
   return true;
-};
-
-// This prevents Gatsby from remounting /app/**
-export const replaceComponentRenderer = ({ props }) => {
-  return (
-    <props.pageResources.component
-      key={props.pageResources.page.path}
-      {...props}
-    />
-  );
 };

@@ -7,8 +7,8 @@ export interface LogoMiamiProps {
 export function LogoMiami({ size, ...props }: LogoMiamiProps) {
   return (
     <svg
-      width={457 * size}
-      height={60 * size}
+      width={Math.round(457 * size)}
+      height={Math.round(60 * size)}
       viewBox="0 0 4569 594"
       {...props}
     >

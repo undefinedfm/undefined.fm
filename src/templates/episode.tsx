@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 import format from 'date-fns/format';
 
 import { Nav } from '@components/Nav';
-import { theme } from '@theme';
+import { theme } from '../lib/theme';
 import { css } from 'glamor';
-import { scale, rhythm } from '../typography';
+import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
 import { Container } from '@components/Container';
 import { Head } from '@components/Head/Head';

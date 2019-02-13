@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { Block } from 'glamor/jsxstyle';
-import { theme } from '../theme';
+import { theme } from '../lib/theme';
 
 export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {
   return (

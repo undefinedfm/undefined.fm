@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Footer } from '@components/Footer';
-import { scale, rhythm } from '../typography';
-import { theme } from '@theme';
+import { scale, rhythm } from '../lib/typography';
+import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { Container } from '@components/Container';
 import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
 import { Block } from 'glamor/jsxstyle';
+import { Listen } from '@components/Listen';
 
 /**
  * Slugify a string
@@ -47,6 +48,7 @@ export default class Home extends React.Component<any, any> {
               {...css({ margin: '2rem auto', height: '100%', width: '100%' })}
             />
           </div>
+
           <h1
             {...css({
               color: '#fff',
@@ -63,6 +65,7 @@ export default class Home extends React.Component<any, any> {
             software development, JavaScript, React, CSS, developer tooling,
             crossbows, debauchery, and shenanigans.
           </h1>
+          <Listen />
           {this.props.data.allEpisode.edges.map(({ node }: any, i: number) => (
             <div key={`${node.date}${i}-rss`}>
               <Link

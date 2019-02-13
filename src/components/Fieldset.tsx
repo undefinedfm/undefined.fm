@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Block } from 'glamor/jsxstyle';
 import { Field, FieldProps } from 'formik';
 import posed from 'react-pose';
-import { theme } from '../theme';
+import { theme } from '../lib/theme';
 
 const LabelPoser = posed.label({
   open: {

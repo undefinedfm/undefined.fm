@@ -3,6 +3,7 @@ import { LogoMiami } from './LogoMiami';
 import { css } from 'glamor';
 import { Link } from 'gatsby';
 import VisuallyHidden from '@reach/visually-hidden';
+import { rhythm } from '../lib/typography';
 export interface NavProps {}
 
 export function Nav(props: NavProps) {
@@ -31,9 +32,25 @@ export function Nav(props: NavProps) {
           justifyContent: 'center',
         })}
       >
-        <Link to="/">
-          <VisuallyHidden>The Undefined Podcast</VisuallyHidden>
-          <LogoMiami size={0.75} />
+        <Link
+          to="/"
+          {...css({
+            fontFamily: `'Lazer', sans-serif`,
+            fontSize: rhythm(1.5),
+            textDecoration: 'none',
+          })}
+        >
+          Undefined
+          <span
+            {...css({
+              display: 'inline-block',
+              marginLeft: '-.25rem',
+              marginRight: '.25rem',
+            })}
+          >
+            .
+          </span>
+          <span {...css({ fontSize: rhythm(1) })}>fm</span>
         </Link>
       </div>
     </div>
