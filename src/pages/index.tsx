@@ -65,7 +65,9 @@ export default class Home extends React.Component<any, any> {
             software development, JavaScript, React, CSS, developer tooling,
             crossbows, debauchery, and shenanigans.
           </h1>
-          <Listen />
+          <div {...css({ marginBottom: rhythm(4) })}>
+            <Listen />
+          </div>
           {this.props.data.allEpisode.edges.map(({ node }: any, i: number) => (
             <div key={`${node.date}${i}-rss`}>
               <Link
