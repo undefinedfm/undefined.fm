@@ -10,11 +10,16 @@ import { Listen } from '@components/Listen';
 import { ShareRow } from '@components/ShareRow';
 import { Header } from '../components/Header';
 import { Bio } from '@components/Bio';
+import { Head } from '@components/Head/Head';
 
 export default class Home extends React.Component<any, any> {
   render() {
     return (
       <div>
+        <Head
+          title="The Undefined Podcast"
+          description="A podcast about JavaScript, crossbows, and other stuff. Hosted by Jared Palmer and Ken Wheeler."
+        />
         <div
           {...css({
             top: 0,

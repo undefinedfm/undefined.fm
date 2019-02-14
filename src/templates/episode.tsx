@@ -18,7 +18,11 @@ export default class Episode extends React.Component<any, any> {
     const { episode } = this.props.data;
     return (
       <>
-        <Head title={episode.title} description={episode.description} />
+        <Head
+          title={episode.title}
+          description={episode.description}
+          slug={episode.fields.slug}
+        />
         <div
           {...css({
             display: 'block',
@@ -195,6 +199,9 @@ export const pageQuery = graphql`
       duration
       number
       audioUrl
+      fields {
+        slug
+      }
     }
   }
 `;
