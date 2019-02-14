@@ -9,10 +9,10 @@ import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen';
 import { ShareRow } from '@components/ShareRow';
 import { Header } from '../components/Header';
+import { Bio } from '@components/Bio';
 
 export default class Home extends React.Component<any, any> {
   render() {
-    console.log(this.props);
     return (
       <div>
         <div
@@ -33,23 +33,60 @@ export default class Home extends React.Component<any, any> {
             padding: '0 1rem',
           })}
         >
-          <div {...css({ [theme.media.medium]: { display: 'flex' } })}>
-            <div {...css({ margin: '0 auto' })}>
-              <div
+          <div
+            {...css({
+              [theme.media.medium]: { display: 'flex' },
+              margin: '0 auto',
+            })}
+          >
+            <div
+              {...css({
+                margin: '0 auto',
+                flex: 0,
+              })}
+            >
+              <Link
+                to="/"
                 {...css({
+                  display: 'block',
+                  textDecoration: 'none',
                   textAlign: 'center',
                   background: '#000',
                   margin: '2rem auto',
-                  maxWidth: 300,
+                  width: 300,
+                  padding: '.5rem 0',
                   borderRadius: 16,
                   boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
                 })}
               >
                 <Logo size={0.39} />
-              </div>
+              </Link>
               <Header {...css({ [theme.media.medium]: { display: 'none' } })} />
               <div {...css({ marginBottom: rhythm(1) })}>
                 <Listen />
+              </div>
+              <div>
+                <div
+                  {...css({
+                    color: theme.color.gray,
+                    fontSize: '.9rem',
+                    marginBottom: rhythm(0.5),
+                    textTransform: 'uppercase',
+                    letterSpacing: '.1em',
+                  })}
+                >
+                  Hosted By
+                </div>
+                <Bio
+                  name="Jared Palmer"
+                  twitterHandle="jaredpalmer"
+                  avatarUrl="https://pbs.twimg.com/profile_images/892351529348411392/FLQyLnoc_400x400.jpg"
+                />
+                <Bio
+                  name="Ken Wheeler"
+                  twitterHandle="ken_wheeler"
+                  avatarUrl="https://avatars3.githubusercontent.com/u/286616?s=400&v=4"
+                />
               </div>
             </div>
             <div {...css({ [theme.media.medium]: { marginLeft: rhythm(2) } })}>

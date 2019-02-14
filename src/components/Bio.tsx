@@ -10,6 +10,7 @@ interface BioProps {
   twitterHandle: string;
   byline?: React.ReactNode;
 }
+
 export function Bio({ name, avatarUrl, byline, twitterHandle }: BioProps) {
   return (
     <a

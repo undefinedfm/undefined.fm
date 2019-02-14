@@ -128,7 +128,11 @@ export function ShareRow(props: ShareRowProps) {
       </button>
       <button
         onClick={() => copyToClipboard(window.location.href)}
-        {...css({ ...buttonStyles, background: theme.color.grayDarker })}
+        {...css({
+          ...buttonStyles,
+          background: theme.color.grayDarker,
+          marginRight: 0,
+        })}
       >
         <svg
           viewBox="0 0 24 24"

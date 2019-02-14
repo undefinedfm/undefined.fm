@@ -42,7 +42,7 @@ export default class Episode extends React.Component<any, any> {
           />
           <div
             {...css({
-              maxWidth: 675,
+              // maxWidth: 675,
               [theme.media.medium]: { maxWidth: 968 },
               margin: '0 auto',
               padding: '0 1rem',
@@ -60,6 +60,7 @@ export default class Episode extends React.Component<any, any> {
                   order: 2,
                   [theme.media.medium]: { order: 1, display: 'block' },
                   margin: '0 auto',
+                  flex: 0,
                 })}
               >
                 <Link
@@ -70,7 +71,8 @@ export default class Episode extends React.Component<any, any> {
                     textAlign: 'center',
                     background: '#000',
                     margin: '2rem auto',
-                    maxWidth: 300,
+                    padding: '.5rem 0',
+                    width: 300,
                     borderRadius: 16,
                     boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
                   })}
@@ -107,11 +109,20 @@ export default class Episode extends React.Component<any, any> {
               <div
                 {...css({
                   order: 1,
+                  marginRight: 0,
+                  padding: 0,
+
                   [theme.media.medium]: { order: 2, marginLeft: rhythm(2) },
                 })}
               >
                 <div {...css({ marginTop: rhythm(2) })}>
-                  <main {...css({ marginTop: rhythm(1) })}>
+                  <main
+                    {...css({
+                      marginTop: rhythm(1),
+                      marginLeft: 0,
+                      marginRight: 0,
+                    })}
+                  >
                     <article>
                       <header>
                         <h1
