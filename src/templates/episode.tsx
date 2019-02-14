@@ -10,7 +10,6 @@ import { Footer } from '@components/Footer';
 import { Head } from '@components/Head/Head';
 import { ShareRow } from '@components/ShareRow';
 import { Logo } from '@components/Logo';
-import { Header } from '@components/Header';
 import { Listen } from '@components/Listen';
 import { Bio } from '@components/Bio';
 
