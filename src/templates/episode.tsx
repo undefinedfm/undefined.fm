@@ -7,7 +7,6 @@ import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
-import { Container } from '@components/Container';
 import { Head } from '@components/Head/Head';
 import { ShareRow } from '@components/ShareRow';
 import { Logo } from '@components/Logo';
