@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { Toggle, ToggleProps } from './Toggle';
 import { Block } from 'glamor/jsxstyle';
 import { Field, FieldProps } from 'formik';
 import posed from 'react-pose';
-import { PoseBlock } from './PoseView';
-import { theme } from '../theme';
+import { theme } from '../lib/theme';
 
 const LabelPoser = posed.label({
   open: {
@@ -46,6 +44,7 @@ export const Fieldset: React.SFC<any> = ({ label, id, render, ...props }) => {
               fontSize=".85rem"
               marginBottom=".5rem"
               letterSpacing=".025em"
+              textAlign="left"
               zIndex="1"
               color={theme.color.gray}
               pose={fieldProps.field.value !== '' ? 'open' : 'closed'}

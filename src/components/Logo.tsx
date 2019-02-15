@@ -1,7 +1,13 @@
 import * as React from 'react';
-
+import { theme } from '../lib/theme';
+// tslint:disable
 export const Logo = (props: any) => (
-  <svg width={756} height={680} viewBox="0 0 756 680" {...props}>
+  <svg
+    width={Math.round(props.size * 756)}
+    height={Math.round(props.size * 680)}
+    viewBox="0 0 756 680"
+    {...props}
+  >
     <defs>
       <linearGradient
         x1="5.239%"

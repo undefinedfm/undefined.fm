@@ -1,220 +1,232 @@
 import * as React from 'react';
+import { graphql, Link } from 'gatsby';
+import { Footer } from '@components/Footer';
+import { rhythm } from '../lib/typography';
+import { theme } from '../lib/theme';
 import { css } from 'glamor';
-import '../reset.css';
-import { Logo } from '../components/Logo';
-import { Block } from 'glamor/jsxstyle';
-import { Formik, Form, FieldProps } from 'formik';
-import axios from 'axios';
-import { theme } from '../theme';
-import { Fieldset } from '../components/Fieldset';
-import { Footer } from '../components/Footer';
-import { Head } from '../components/Head';
+import { format } from 'date-fns';
+import { Logo } from '@components/Logo';
+import { Listen } from '@components/Listen';
+import { ShareRow } from '@components/ShareRow';
+import { Header } from '../components/Header';
+import { Bio } from '@components/Bio';
+import { Head } from '@components/Head/Head';
 
-const inputStyles = {
-  appearance: 'none',
-  color: '#fff',
-  fontFamily: 'inherit',
-  fontStyle: 'inherit',
-  verticalAlign: 'baseline',
-  display: 'block',
-  position: 'relative',
-  margin: '0 0 2rem',
-  border: 0,
-  padding: '.5rem 0',
-  background: 'transparent',
-  borderBottom: `1px solid ${theme.color.gray}`,
-  borderRadius: 0,
-  fontSize: 18,
-  lineHeight: '1.55556',
-  outline: 0,
-  zIndex: 2,
-  width: '100%',
-  transition: 'all 200ms ease',
-  '&:focus': {
-    borderBottom: `1px solid ${theme.color.gray}`,
-  },
-  '&:placeholder': {
-    fontSize: 18,
-  },
-};
-
-export default class Home extends React.Component {
+export default class Home extends React.Component<any, any> {
   render() {
     return (
-      <Block
-        css={{
-          minHeight: '100%',
-          height: '100%',
-          background: '#000',
-        }}
-      >
+      <div>
         <Head
           title="The Undefined Podcast"
           description="A podcast about JavaScript, crossbows, and other stuff. Hosted by Jared Palmer and Ken Wheeler."
         />
-
-        <Block
-          css={{
+        <div
+          {...css({
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 9999,
+            height: 4,
+            backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
+          })}
+        />
+        <div
+          {...css({
+            maxWidth: 675,
+            [theme.media.medium]: { maxWidth: 968 },
             margin: '0 auto',
-            padding: '2rem 0',
-            textAlign: 'center',
-          }}
+            padding: '0 1rem',
+          })}
         >
-          <Logo
+          <div
             {...css({
-              textAlign: 'center',
-              width: '100%',
-              maxWidth: 500,
-              height: 'auto',
+              [theme.media.medium]: { display: 'flex' },
+              margin: '0 auto',
             })}
-          />
-        </Block>
-        <Block
-          props={{ id: 'maincontent' }}
-          maxWidth={550}
-          margin="0 auto 4rem"
-          padding="0 1rem"
-        >
-          <Block
-            component="p"
-            color="#fff"
-            opacity=".9"
-            textAlign="center"
-            marginBottom="6rem"
-            lineHeight="1.5"
-            fontSize="2rem"
-            letterSpacing="-.02em"
           >
-            We're starting a motherforkin' podcast.
-          </Block>
+            <div
+              {...css({
+                margin: '0 auto',
+                flex: 0,
+              })}
+            >
+              <Link
+                to="/"
+                {...css({
+                  display: 'block',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  background: '#000',
+                  margin: '2rem auto',
+                  width: 300,
+                  padding: '.5rem 0',
+                  borderRadius: 16,
+                  boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
+                })}
+              >
+                <Logo size={0.39} />
+              </Link>
+              <Header {...css({ [theme.media.medium]: { display: 'none' } })} />
+              <div {...css({ marginBottom: rhythm(1) })}>
+                <Listen />
+              </div>
+              <div>
+                <div
+                  {...css({
+                    color: theme.color.gray,
+                    fontSize: '.9rem',
+                    marginBottom: rhythm(0.5),
+                    textTransform: 'uppercase',
+                    letterSpacing: '.1em',
+                  })}
+                >
+                  Hosted By
+                </div>
+                <Bio
+                  name="Jared Palmer"
+                  twitterHandle="jaredpalmer"
+                  avatarUrl="https://pbs.twimg.com/profile_images/892351529348411392/FLQyLnoc_400x400.jpg"
+                />
+                <Bio
+                  name="Ken Wheeler"
+                  twitterHandle="ken_wheeler"
+                  avatarUrl="https://avatars3.githubusercontent.com/u/286616?s=400&v=4"
+                />
+              </div>
+            </div>
+            <div {...css({ [theme.media.medium]: { marginLeft: rhythm(2) } })}>
+              <Header
+                {...css({
+                  display: 'none',
+                  [theme.media.medium]: { display: 'block' },
+                })}
+              />
+              <ShareRow
+                author="theundefinedio"
+                {...css({ marginBottom: rhythm(2) })}
+              />
+              <div {...css({ marginTop: rhythm(2) })}>
+                {this.props.data.allEpisode.edges.map(
+                  ({ node }: any, i: number) => (
+                    <div key={`${node.date}${i}-rss`}>
+                      <div {...css({ display: 'flex', alignItems: 'center' })}>
+                        <Link
+                          to={node.fields.slug}
+                          aria-label={`View ${node.title}`}
+                          style={{
+                            textDecoration: 'none',
+                          }}
+                          {...css({
+                            '&:hover svg': {
+                              color: '#00FFF4',
+                            },
+                            transition: 'scale 100ms ease-out',
+                            '&:active': {
+                              transform: 'scale(.98)',
+                            },
+                          })}
+                        >
+                          <svg
+                            height="48"
+                            width="48"
+                            version="1.1"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlSpace="preserve"
+                            {...css({
+                              verticalAlign: 'middle',
+                              height: 42,
+                              width: 42,
+                              marginRight: rhythm(0.5),
+                              [theme.media.medium]: {
+                                height: 56,
+                                width: 56,
+                              },
+                            })}
+                          >
+                            <title>button circle play</title>
+                            <g fill="currentColor">
+                              <path
+                                // tslint:disable-next-line:max-line-length
+                                d="M24,1C11.317,1,1,11.317,1,24s10.317,23,23,23s23-10.317,23-23S36.683,1,24,1z M32.524,24.852l-13,8 C19.363,32.95,19.182,33,19,33c-0.168,0-0.336-0.042-0.488-0.127C18.196,32.696,18,32.362,18,32V16c0-0.362,0.196-0.696,0.512-0.873 c0.317-0.178,0.703-0.169,1.013,0.021l13,8C32.82,23.33,33,23.652,33,24S32.82,24.67,32.524,24.852z"
+                                fill="currentColor"
+                              />
+                            </g>
+                          </svg>
+                        </Link>
+                        <div {...css({ flex: 1 })}>
+                          <span
+                            {...css({
+                              display: 'block',
+                              color: '#555',
+                              fontSize: rhythm(0.55),
+                              textTransform: 'uppercase',
+                              letterSpacing: '.1em',
+                            })}
+                          >
+                            {format(node.date, 'MMM D, YYYY')} · Episode{' '}
+                            {node.episodeNumber}
+                          </span>
+                          <Link
+                            to={node.fields.slug}
+                            aria-label={`View ${node.title}`}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <h2
+                              {...css({
+                                color: theme.color.purple,
+                                marginTop: 0,
+                                fontSize: rhythm(1),
+                                ':hover': {
+                                  color: '#00FFF4',
+                                  cursor: 'pointer',
+                                },
+                              })}
+                            >
+                              {node.title}
+                            </h2>
+                          </Link>
+                        </div>
+                      </div>
 
-          <Formik
-            initialValues={{ name: '', email: '' }}
-            onSubmit={(values, { setSubmitting, setStatus }) => {
-              axios
-                .request({
-                  url:
-                    'https://api.formik.com/v1/form/5bf8a927daa4d40001e38e2a/submit',
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  data: {
-                    ...values,
-                  },
-                })
-                .then(
-                  () => {
-                    setSubmitting(false);
-                    setStatus('Success');
-                  },
-                  e => {
-                    console.log(e);
-                  }
-                );
-            }}
-          >
-            {({ status, isSubmitting }) => (
-              <>
-                {status === 'Success' ? (
-                  <Block
-                    component="h2"
-                    textAlign="center"
-                    marginBottom="2rem"
-                    fontWeight="800"
-                    fontStyle="italic"
-                    textTransform="uppercase"
-                    color="#C86DD7"
-                  >
-                    Thanks! We'll keep you posted!
-                  </Block>
-                ) : (
-                  <Form>
-                    <Block
-                      component="h2"
-                      textAlign="center"
-                      marginBottom="2rem"
-                      fontWeight="800"
-                      fontStyle="italic"
-                      textTransform="uppercase"
-                      color="#C86DD7"
-                    >
-                      Subscribe for updates.
-                    </Block>
-                    <Fieldset
-                      id="name"
-                      name="name"
-                      label="Name"
-                      render={({ field }: FieldProps) => (
-                        <Block
-                          component="input"
-                          props={{
-                            ...field,
-                            placeholder: 'Name',
-                            required: true,
-                          }}
-                          css={inputStyles}
-                        />
-                      )}
-                    />
-                    <Fieldset
-                      label="Email"
-                      id="email"
-                      name="email"
-                      render={({ field, form }: FieldProps) => (
-                        <Block
-                          component="input"
-                          props={{
-                            ...field,
-                            type: 'email',
-                            placeholder: 'Email',
-                            required: true,
-                          }}
-                          css={inputStyles}
-                        />
-                      )}
-                    />
-                    <Block
-                      component="button"
-                      props={{ type: 'submit' }}
-                      color={theme.color.white}
-                      padding="1rem 1.25rem"
-                      minWidth={200}
-                      margin="3rem auto"
-                      display="block"
-                      position="relative"
-                      textTransform="uppercase"
-                      borderRadius={30}
-                      border="0"
-                      fontSize="1rem"
-                      textAlign="center"
-                      fontWeight={theme.bold}
-                      transform="translateY(0)"
-                      cursor="pointer"
-                      background="#3023AE"
-                      fontStyle="italic"
-                      backgroundImage="linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%)"
-                      css={{
-                        transition: 'all 100ms ease',
-                        '&:hover': {
-                          transform: `translateY(-1px)`,
-                          boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
-                        },
-                        '&:active': {
-                          transform: `translateY(0)`,
-                        },
-                      }}
-                    >
-                      {isSubmitting ? 'Loading....' : 'Subscribe'}
-                    </Block>
-                  </Form>
+                      <p>
+                        {node.description}
+                        <Link
+                          to={node.fields.slug}
+                          aria-label={`View ${node.title}`}
+                        >
+                          Listen to Episode →
+                        </Link>
+                      </p>
+                    </div>
+                  )
                 )}
-              </>
-            )}
-          </Formik>
-        </Block>
+              </div>
+            </div>
+          </div>
+        </div>
         <Footer />
-      </Block>
+      </div>
     );
   }
 }
+
+export const query = graphql`
+  {
+    allEpisode(sort: { fields: [date], order: DESC }, limit: 10) {
+      edges {
+        node {
+          id
+          title
+          description
+          episodeNumber
+          duration
+          date
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`;

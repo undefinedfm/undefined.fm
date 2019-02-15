@@ -6,6 +6,7 @@ export interface HeadProps {
   description?: string;
   image?: string;
   children?: any;
+  slug?: string;
 }
 // @see https://github.com/nfl/react-helmet/issues/373
 // Use arrays. lol.
@@ -14,6 +15,7 @@ export const Head: React.SFC<HeadProps> = ({
   image,
   description,
   children,
+  slug,
   ...rest
 }) => {
   return (
@@ -45,21 +47,31 @@ export const Head: React.SFC<HeadProps> = ({
             content: description,
           },
           {
+            property: 'og:url',
+            content: `https://undefined.fm${slug}`,
+          },
+          {
             name: 'twitter:card',
-            content: 'summary_large_image',
+            content: 'summary',
           },
           {
             name: 'twitter:image',
-            content: 'https://theundefined.io/og_image4.png',
+            content: 'https://undefined.fm/og_image4.png',
           },
           {
             name: 'og:image',
-            content: 'https://theundefined.io/og_image4.png',
+            content: 'https://undefined.fm/og_image4.png',
           },
         ].filter(Boolean)}
         {...rest}
       >
         {title ? <title>{title}</title> : null}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="The Undefined Podcast RSS"
+          href="https://rss.simplecast.com/podcasts/8781/rss"
+        />
         {children}
       </Helmet>
     </>

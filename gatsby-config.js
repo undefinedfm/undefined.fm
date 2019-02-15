@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-next`,
     `gatsby-plugin-glamor`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
@@ -55,9 +54,18 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `#000`,
+        color: `#C86DD7`,
         // Disable the loading spinner.
         showSpinner: false,
+      },
+    },
+    {
+      // resolve: '@uptimeventures/gatsby-source-rss',
+      // this is our custom fork of @uptimeventures/gatsby-source-rss
+      // it extracts the embed URL out of the vanilla RSS feed.
+      resolve: 'gatsby-source-simplecast-rss',
+      options: {
+        feed: 'https://rss.simplecast.com/podcasts/8781/rss.xml',
       },
     },
     `gatsby-plugin-sitemap`,
@@ -81,6 +89,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-55176740-9',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/lib/typography`,
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
