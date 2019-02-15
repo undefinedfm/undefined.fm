@@ -37,6 +37,11 @@ export function Nav() {
             fontSize: rhythm(1.5),
             textDecoration: 'none',
             color: theme.color.white,
+            transition: 'color 100ms ease-out',
+            ':hover': {
+              textDecoration: 'none',
+              color: theme.color.purple,
+            },
           })}
         >
           Undefined

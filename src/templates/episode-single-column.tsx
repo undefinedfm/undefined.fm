@@ -64,7 +64,6 @@ export const pageQuery = graphql`
       date
       html
       embed
-      number
     }
   }
 `;

@@ -15,7 +15,6 @@ exports.sourceNodes = async ({ actions }, options = {}) => {
     // Create nodes here, generally by downloading data
     // from a remote API.
     const { rss } = await load(feed);
-
     createChildren(rss.channel[0].item, null, createNode);
   } catch (e) {}
 

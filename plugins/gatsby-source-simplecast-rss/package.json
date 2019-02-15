@@ -15,8 +15,9 @@
   ],
   "dependencies": {
     "axios": "0.18.0",
-    "request-promise": "4.2.2",
     "lodash.get": "4.4.2",
+    "request": "^2.88.0",
+    "request-promise": "4.2.2",
     "xml2js": "0.4.9"
   },
   "publishConfig": {

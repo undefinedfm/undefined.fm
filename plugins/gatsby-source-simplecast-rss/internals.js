@@ -57,12 +57,11 @@ const createChildren = (nodes, parent, createNode) => {
   const children = [];
 
   nodes.forEach(n => {
-    const link = select(n, 'link');
+    const link = toSlug(select(n, 'title'));
     children.push(link);
 
     const node = {
       id: toSlug(select(n, 'title')),
-      number: link.replace('http://theundefined.simplecast.fm/', ''),
       title: select(n, 'title'),
       description: select(n, 'description'),
       html: select(n, 'content:encoded'),

@@ -197,7 +197,6 @@ export const pageQuery = graphql`
       html
       embed
       duration
-      number
       audioUrl
       fields {
         slug

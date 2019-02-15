@@ -60,7 +60,6 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               id
-              number
               title
               description
               fields {
