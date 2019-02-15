@@ -58,7 +58,7 @@ export const PODCAST_LINKS: ActionLinkProps[] = [
   },
   {
     src: rss,
-    href: 'https://rss.simplecast.com/podcasts/8781/rss',
+    href: 'https://rss.simplecast.com/podcasts/8781/rss.xml',
     text: 'RSS Feed',
   },
 ];
