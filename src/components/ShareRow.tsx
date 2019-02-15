@@ -39,6 +39,7 @@ const buttonStyles = {
   },
 };
 export function ShareRow(props: ShareRowProps) {
+  const [didCopy, setDidCopy] = React.useState(false);
   const { title, author, media } = props;
   const url = props.url
     ? props.url
@@ -127,7 +128,10 @@ export function ShareRow(props: ShareRowProps) {
         Share
       </button>
       <button
-        onClick={() => copyToClipboard(window.location.href)}
+        onClick={() => {
+          copyToClipboard(window.location.href);
+          setDidCopy(true);
+        }}
         {...css({
           ...buttonStyles,
           background: theme.color.grayDarker,
@@ -166,7 +170,7 @@ export function ShareRow(props: ShareRowProps) {
             />
           </g>
         </svg>
-        Copy
+        {didCopy ? 'Copied!' : 'Copy'}
       </button>
     </div>
   );
