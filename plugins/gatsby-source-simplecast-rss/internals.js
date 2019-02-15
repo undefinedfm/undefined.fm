@@ -68,6 +68,7 @@ const createChildren = (nodes, parent, createNode) => {
       // Fix the date
       date: new Date(select(n, 'pubDate')).toISOString(),
       // Extract out the embed URL
+      artwork: n['itunes:image'][0]['$']['href'],
       embed: n.enclosure[0]['$']['url']
         .replace('.mp3', '')
         .replace('audio', 'embed'),

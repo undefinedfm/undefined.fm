@@ -56,11 +56,15 @@ export const Head: React.SFC<HeadProps> = ({
           },
           {
             name: 'twitter:image',
-            content: 'https://undefined.fm/og_image4.png',
+            content:
+              image ||
+              'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
           },
           {
             name: 'og:image',
-            content: 'https://undefined.fm/og_image4.png',
+            content:
+              image ||
+              'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
           },
         ].filter(Boolean)}
         {...rest}
@@ -70,7 +74,7 @@ export const Head: React.SFC<HeadProps> = ({
           rel="alternate"
           type="application/rss+xml"
           title="The Undefined Podcast RSS"
-          href="https://rss.simplecast.com/podcasts/8781/rss"
+          href="https://rss.simplecast.com/podcasts/8781/rss.xml"
         />
         {children}
       </Helmet>

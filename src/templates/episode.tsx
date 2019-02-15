@@ -22,6 +22,7 @@ export default class Episode extends React.Component<any, any> {
           title={episode.title}
           description={episode.description}
           slug={episode.fields.slug}
+          image={episode.artwork}
         />
         <div
           {...css({
@@ -197,6 +198,7 @@ export const pageQuery = graphql`
       html
       embed
       duration
+      artwork
       audioUrl
       fields {
         slug
