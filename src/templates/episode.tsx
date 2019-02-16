@@ -16,6 +16,7 @@ import { Bio } from '@components/Bio';
 export default class Episode extends React.Component<any, any> {
   render() {
     const { episode } = this.props.data;
+    console.log(episode);
     return (
       <>
         <Head
@@ -23,6 +24,22 @@ export default class Episode extends React.Component<any, any> {
           description={episode.description}
           slug={episode.fields.slug}
           image={episode.artwork}
+          isEpisode={true}
+          meta={[
+            {
+              name: 'twitter:player',
+              content: `https://palmer.ngrok.io${
+                episode.fields.slug
+              }/embed?source: twitter`,
+            },
+            { name: 'twitter:player:width', content: '300' },
+            { name: 'twitter:player:height', content: '150' },
+            { name: 'twitter:player:stream', content: episode.audioUrl },
+            {
+              name: 'twitter:player:stream:content_type',
+              content: 'audio/mpeg',
+            },
+          ]}
         />
         <div
           {...css({

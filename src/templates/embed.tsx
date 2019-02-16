@@ -55,12 +55,10 @@ function Embed({ data }: EmbedProps) {
     (state.time / state.duration) * 100
   );
   useInterval(() => {
-    console.log((state.time / state.duration) * 100);
     setProgress((state.time / state.duration) * 100);
     // tslint:disable-next-line:align
   }, 300);
   const handleSeek = React.useCallback(event => {
-    console.log(event.target.value);
     controls.seek((event.target.value / 100) * state.duration);
     // tslint:disable-next-line:align
   }, []);
@@ -74,57 +72,17 @@ function Embed({ data }: EmbedProps) {
       />
       <div>
         {audio}
-        <div
-          {...css({
-            top: 0,
-            left: 0,
-            right: 0,
-            zIndex: 9999,
-            height: 4,
-            backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
-            display: 'none',
-            [theme.media.medium]: { display: 'block' },
-          })}
-        />
 
-        <h1 {...css({ color: theme.color.purple, marginTop: 0 })}>
-          {episode.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(0.25),
-            color: theme.color.gray,
-            textTransform: 'uppercase',
-            letterSpacing: '.1em',
-          }}
-        >
-          <Link
-            to="/"
-            {...css({
-              color: theme.color.gray,
-              textDecoration: 'none',
-              '&:hover': {
-                color: theme.color.purple,
-              },
-            })}
-          >
-            The Undefined
-          </Link>{' '}
-          · {format(episode.date, 'MMM D, YYYY')}
-        </p>
         <input
           type="range"
           value={progress}
           min="0"
           max="100"
-          step="1"
           onChange={handleSeek}
         />
-        <div {...css({ color: '#fff' })}>
+        {/* <div {...css({ color: '#fff' })}>
           <pre>{JSON.stringify(state, null, 2)}</pre>
-        </div>
+        </div> */}
         <button onClick={controls.pause}>Pause</button>
         <button onClick={controls.play}>Play</button>
         <br />

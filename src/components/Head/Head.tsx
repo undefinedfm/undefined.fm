@@ -6,8 +6,11 @@ export interface HeadProps {
   description?: string;
   image?: string;
   children?: any;
+  isEpisode?: boolean;
   slug?: string;
+  meta?: any[];
 }
+
 // @see https://github.com/nfl/react-helmet/issues/373
 // Use arrays. lol.
 export const Head: React.SFC<HeadProps> = ({
@@ -16,6 +19,8 @@ export const Head: React.SFC<HeadProps> = ({
   description,
   children,
   slug,
+  meta,
+  isEpisode = false,
   ...rest
 }) => {
   return (
@@ -26,26 +31,27 @@ export const Head: React.SFC<HeadProps> = ({
       </div>
 
       <Helmet
+        title={title}
         meta={
           [
             { name: 'copyright', content: 'The Palmer Group' },
-            { name: 'og:type', content: 'website' },
-            title && {
+            { property: 'og:type', content: 'website' },
+            !!title && {
               name: 'twitter:title',
               content: title,
             },
-            title && { name: 'og:title', content: title },
+            !!title && { property: 'og:title', content: title },
             { name: 'twitter:site', content: '@theundefinedio' },
-            description && {
+            !!description && {
               name: 'description',
               content: description,
             },
-            description && {
+            !!description && {
               name: 'twitter:description',
               content: description,
             },
-            description && {
-              name: 'og:description',
+            !!description && {
+              property: 'og:description',
               content: description,
             },
             {
@@ -53,16 +59,12 @@ export const Head: React.SFC<HeadProps> = ({
               content: `https://undefined.fm${slug}`,
             },
             {
-              property: 'og:site_name',
-              content: `The Undefined Podcast`,
-            },
-            {
               property: 'og:locale',
               content: `en_US`,
             },
             {
               name: 'twitter:card',
-              content: 'summary',
+              content: isEpisode ? 'player' : 'summary',
             },
             {
               name: 'twitter:image',
@@ -71,7 +73,7 @@ export const Head: React.SFC<HeadProps> = ({
                 'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
             },
             {
-              name: 'og:image',
+              property: 'og:image',
               content:
                 image ||
                 'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
@@ -80,11 +82,12 @@ export const Head: React.SFC<HeadProps> = ({
               name: 'apple-itunes-app',
               content: 'app-id=1451541555',
             },
-          ].filter(Boolean) as any[]
+          ]
+            .concat(meta as any)
+            .filter(Boolean) as any[]
         }
         {...rest}
       >
-        {title ? <title>{title}</title> : null}
         <link
           rel="alternate"
           type="application/rss+xml"
