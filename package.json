@@ -10,20 +10,20 @@
     "test": "echo \"yay\""
   },
   "resolutions": {
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11"
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2"
   },
   "dependencies": {
     "@reach/visually-hidden": "^0.1.2",
+    "@types/node": "10.12.26",
     "@types/qs": "^6.5.1",
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
     "@types/react-helmet": "^5.0.6",
-    "@types/webpack-env": "^1.13.6",
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "dotenv": "^6.0.0",
-    "formik": "^1.3.1",
+    "formik": "^1.5.0",
     "gatsby": "^2.0.119",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-canonical-urls": "^2.0.0-beta.2",
