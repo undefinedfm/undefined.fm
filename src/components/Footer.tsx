@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { theme } from '../lib/theme';
-import { Row, Block, Column } from 'glamor/jsxstyle';
 import { NavLink } from './NavLink';
 import { LINKS } from '../lib/constants';
 import { Container } from './Container';
 import { Formik, Form, FieldProps } from 'formik';
 import axios from 'axios';
 import { Fieldset } from './Fieldset';
+import { css } from 'glamor';
 
 const inputStyles = {
   appearance: 'none',
@@ -14,7 +14,7 @@ const inputStyles = {
   fontFamily: 'inherit',
   fontStyle: 'inherit',
   verticalAlign: 'baseline',
-  display: 'block',
+  display: 'div',
   position: 'relative',
   margin: '0 0 2rem',
   border: 0,
@@ -40,11 +40,11 @@ export interface FooterProps {}
 
 export const Footer: React.SFC<FooterProps> = props => {
   return (
-    <Block
-      component="footer"
-      props={{ role: 'contentinfo', 'aria-label': 'Footer', id: 'footer' }}
-      padding="4rem 0"
-      textAlign="center"
+    <footer
+      role="contentinfo"
+      aria-label="Footer"
+      id="footer"
+      {...css({ padding: '4rem', textAlign: 'center' })}
     >
       <Container>
         <Formik
@@ -76,41 +76,43 @@ export const Footer: React.SFC<FooterProps> = props => {
           {({ status, isSubmitting }) => (
             <>
               {status === 'Success' ? (
-                <Block
-                  component="h2"
-                  textAlign="center"
-                  marginBottom="2rem"
-                  fontWeight="700"
-                  color={theme.color.purple}
+                <h2
+                  {...css({
+                    textAlign: 'center',
+                    marginBottom: '1rem',
+                    fontWeight: '700',
+                    fontSize: '1.5rem',
+                    // fontStyle: "italic",
+                    color: theme.color.grayLighter,
+                  })}
                 >
                   Thanks! We'll keep you posted!
-                </Block>
+                </h2>
               ) : (
                 <Form>
-                  <Block
-                    component="h2"
-                    textAlign="center"
-                    marginBottom="1rem"
-                    fontWeight="700"
-                    fontSize="1.5rem"
-                    // fontStyle="italic"
-                    color={theme.color.grayLighter}
+                  <h2
+                    {...css({
+                      textAlign: 'center',
+                      marginBottom: '1rem',
+                      fontWeight: '700',
+                      fontSize: '1.5rem',
+                      // fontStyle: "italic",
+                      color: theme.color.grayLighter,
+                    })}
                   >
                     Subscribe for updates
-                  </Block>
+                  </h2>
                   <Fieldset
                     id="name"
                     name="name"
                     label="Name"
                     render={({ field }: FieldProps) => (
-                      <Block
-                        component="input"
-                        props={{
-                          ...field,
-                          placeholder: 'Name',
-                          required: true,
-                        }}
-                        css={inputStyles}
+                      <input
+                        {...field}
+                        type="text"
+                        placeholder="Name"
+                        required={true}
+                        {...css(inputStyles)}
                       />
                     )}
                   />
@@ -119,42 +121,38 @@ export const Footer: React.SFC<FooterProps> = props => {
                     id="email"
                     name="email"
                     render={({ field, form }: FieldProps) => (
-                      <Block
-                        component="input"
-                        props={{
-                          ...field,
-                          type: 'email',
-                          placeholder: 'Email',
-                          required: true,
-                        }}
-                        css={inputStyles}
+                      <input
+                        {...field}
+                        type="email"
+                        placeholder="email"
+                        required={true}
+                        {...css(inputStyles)}
                       />
                     )}
                   />
-                  <Block
-                    component="button"
-                    props={{ type: 'submit' }}
-                    // color={theme.color.white}
-                    padding="1rem 1.25rem"
-                    minWidth={200}
-                    margin="3rem auto"
-                    display="block"
-                    position="relative"
-                    textTransform="uppercase"
-                    borderRadius={40}
-                    border="0"
-                    fontSize="1rem"
-                    textAlign="center"
-                    fontWeight={theme.bold}
-                    transform="translateY(0)"
-                    cursor="pointer"
-                    color="#000"
-                    background={theme.color.purple}
-                    // fontStyle="italic"
-                    backgroundImage={`linear-gradient(-134deg, ${
-                      theme.color.purple
-                    } 0%, #00FFF4 100%)`}
-                    css={{
+                  <button
+                    type="submit"
+                    {...css({
+                      padding: '1rem 1.25rem',
+                      minWidth: 200,
+                      margin: '3rem auto',
+                      display: 'div',
+                      position: 'relative',
+                      textTransform: 'uppercase',
+                      borderRadius: 40,
+                      border: '0',
+                      fontSize: '1rem',
+                      textAlign: 'center',
+                      fontWeight: theme.bold,
+                      transform: 'translateY(0)',
+                      cursor: 'pointer',
+                      color: '#000',
+                      background: theme.color.purple,
+                      // fontStyle: "italic",
+                      backgroundImage: `linear-gradient(-134deg, ${
+                        theme.color.purple
+                      } 0%, #00FFF4 100%)`,
+
                       transition: 'all 100ms ease',
                       '&:hover': {
                         boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
@@ -162,18 +160,20 @@ export const Footer: React.SFC<FooterProps> = props => {
                       '&:hover:active': {
                         transform: `scale(.98)`,
                       },
-                    }}
+                    })}
                   >
                     {isSubmitting ? 'Loading....' : 'Subscribe'}
-                  </Block>
+                  </button>
                 </Form>
               )}
             </>
           )}
         </Formik>
-        <Column
-          margin="6rem auto 2rem"
-          css={{
+        <div
+          {...css({
+            margin: '6rem auto 2rem',
+            display: 'flex',
+            flexDirection: 'column',
             [theme.media.medium]: {
               flexDirection: 'row',
               alignItems: 'center',
@@ -181,18 +181,18 @@ export const Footer: React.SFC<FooterProps> = props => {
               flexWrap: 'wrap',
               justifyContent: 'space-between',
             },
-          }}
+          })}
         >
           {LINKS.map(item => (
             <NavLink key={`footer-${item.text}`} {...item} />
           ))}
-        </Column>
+        </div>
         <NavLink text="Sponsor an Episode" href="mailto:hello@undefined.fm" />
-        <Block fontSize=".8rem" color={theme.color.gray}>
+        <div {...css({ fontSize: '.8rem', color: theme.color.gray })}>
           Copyright © 2019 The Palmer Group.
-        </Block>
+        </div>
       </Container>
-    </Block>
+    </footer>
   );
 };
 
