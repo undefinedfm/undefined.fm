@@ -76,6 +76,10 @@ export const Head: React.SFC<HeadProps> = ({
                 image ||
                 'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
             },
+            {
+              name: 'apple-itunes-app',
+              content: 'app-id=1451541555',
+            },
           ].filter(Boolean) as any[]
         }
         {...rest}
