@@ -26,47 +26,58 @@ export const Head: React.SFC<HeadProps> = ({
       </div>
 
       <Helmet
-        meta={[
-          { name: 'og:type', content: 'website' },
-          title && {
-            name: 'twitter:title',
-            content: title,
-          },
-          title && { name: 'og:title', content: title },
-          { name: 'twitter:site', content: '@theundefinedio' },
-          description && {
-            name: 'description',
-            content: description,
-          },
-          description && {
-            name: 'twitter:description',
-            content: description,
-          },
-          description && {
-            name: 'og:description',
-            content: description,
-          },
-          {
-            property: 'og:url',
-            content: `https://undefined.fm${slug}`,
-          },
-          {
-            name: 'twitter:card',
-            content: 'summary',
-          },
-          {
-            name: 'twitter:image',
-            content:
-              image ||
-              'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
-          },
-          {
-            name: 'og:image',
-            content:
-              image ||
-              'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
-          },
-        ].filter(Boolean)}
+        meta={
+          [
+            { name: 'copyright', content: 'The Palmer Group' },
+            { name: 'og:type', content: 'website' },
+            title && {
+              name: 'twitter:title',
+              content: title,
+            },
+            title && { name: 'og:title', content: title },
+            { name: 'twitter:site', content: '@theundefinedio' },
+            description && {
+              name: 'description',
+              content: description,
+            },
+            description && {
+              name: 'twitter:description',
+              content: description,
+            },
+            description && {
+              name: 'og:description',
+              content: description,
+            },
+            {
+              property: 'og:url',
+              content: `https://undefined.fm${slug}`,
+            },
+            {
+              property: 'og:site_name',
+              content: `The Undefined Podcast`,
+            },
+            {
+              property: 'og:locale',
+              content: `en_US`,
+            },
+            {
+              name: 'twitter:card',
+              content: 'summary',
+            },
+            {
+              name: 'twitter:image',
+              content:
+                image ||
+                'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
+            },
+            {
+              name: 'og:image',
+              content:
+                image ||
+                'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
+            },
+          ].filter(Boolean) as any[]
+        }
         {...rest}
       >
         {title ? <title>{title}</title> : null}
