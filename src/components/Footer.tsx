@@ -124,7 +124,7 @@ export const Footer: React.SFC<FooterProps> = props => {
                       <input
                         {...field}
                         type="email"
-                        placeholder="email"
+                        placeholder="Email"
                         required={true}
                         {...css(inputStyles)}
                       />
