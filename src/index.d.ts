@@ -8,3 +8,5 @@ declare module '*.svg';
 declare module 'typography';
 declare module 'typography-theme-bootstrap';
 declare module '@reach/visually-hidden';
+declare module 'use-callbag';
+declare module 'react-use/lib/useAudio';

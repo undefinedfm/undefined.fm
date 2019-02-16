@@ -57,6 +57,7 @@
     "react-media": "^1.8.0",
     "react-pose": "^2.1.2",
     "react-typography": "^0.16.18",
+    "react-use": "^5.3.0",
     "request": "^2.87.0",
     "serve": "^9.2.0",
     "ts-loader": "^4.3.0",

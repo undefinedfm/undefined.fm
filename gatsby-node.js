@@ -48,45 +48,60 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: `slug`,
       value: `/radio/${node.id}`,
     });
+    createNodeField({
+      node,
+      name: `embedUrl`,
+      value: `/radio/${node.id}/embed`,
+    });
   }
 };
 
 exports.createPages = ({ graphql, actions }) => {
-  return new Promise((resolve, reject) => {
-    const episodeTemplate = path.resolve('./src/templates/episode.tsx');
-    const episodeQuery = /* GraphQL */ `
-      {
-        allEpisode(sort: { fields: [date], order: DESC }, limit: 1000) {
-          edges {
-            node {
-              id
-              title
-              description
-              fields {
-                slug
-              }
+  const episodeTemplate = path.resolve('./src/templates/episode.tsx');
+  const embedTemplate = path.resolve('./src/templates/embed.tsx');
+  const episodeQuery = /* GraphQL */ `
+    {
+      allEpisode(sort: { fields: [date], order: DESC }, limit: 1000) {
+        edges {
+          node {
+            id
+            title
+            description
+            audioUrl
+            fields {
+              slug
             }
           }
         }
       }
-    `;
+    }
+  `;
 
-    resolve(
-      graphql(episodeQuery).then(result => {
-        if (result.errors) {
-          reject(result.errors);
-        }
+  graphql(episodeQuery).then(result => {
+    if (result.errors) {
+      Promise.reject(result.errors);
+    }
 
-        result.data.allEpisode.edges.forEach(edge => {
-          actions.createPage({
-            path: edge.node.fields.slug,
-            component: episodeTemplate,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          });
-        });
-      })
-    );
+    result.data.allEpisode.edges.forEach(edge => {
+      actions.createPage({
+        path: edge.node.fields.slug,
+        component: episodeTemplate,
+        context: {
+          slug: edge.node.fields.slug,
+          embedUrl: edge.node.fields.slug + '/embed',
+        },
+      });
+    });
+
+    result.data.allEpisode.edges.forEach(edge => {
+      actions.createPage({
+        path: edge.node.fields.slug + '/embed',
+        component: embedTemplate,
+        context: {
+          slug: edge.node.fields.slug,
+          embedUrl: edge.node.fields.slug + '/embed',
+        },
+      });
+    });
   });
 };
