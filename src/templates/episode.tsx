@@ -7,10 +7,10 @@ import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
-import { Head } from '@components/Head/Head';
+import { Head } from '@components/Head';
 import { ShareRow } from '@components/ShareRow';
 import { Logo } from '@components/Logo';
-import { Listen } from '@components/Listen';
+import { Listen } from '@components/Listen/Listen';
 import { Bio } from '@components/Bio';
 
 export default class Episode extends React.Component<any, any> {

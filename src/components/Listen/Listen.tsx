@@ -9,8 +9,8 @@ import castro from './castro.svg';
 import spotify from './spotify.png';
 import rss from './rss.png';
 import { css } from 'glamor';
-import { theme } from '../lib/theme';
-import { rhythm } from '../lib/typography';
+import { theme } from '../../lib/theme';
+import { rhythm } from '../../lib/typography';
 export interface ListenProps {}
 
 export const PODCAST_LINKS: ActionLinkProps[] = [

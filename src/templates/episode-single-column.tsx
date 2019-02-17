@@ -8,7 +8,7 @@ import { css } from 'glamor';
 import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
 import { Container } from '@components/Container';
-import { Head } from '@components/Head/Head';
+import { Head } from '@components/Head';
 import { ShareRow } from '@components/ShareRow';
 
 export default class Episode extends React.Component<any, any> {

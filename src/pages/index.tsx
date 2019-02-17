@@ -6,11 +6,11 @@ import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
-import { Listen } from '@components/Listen';
+import { Listen } from '@components/Listen/Listen';
 import { ShareRow } from '@components/ShareRow';
 import { Header } from '../components/Header';
 import { Bio } from '@components/Bio';
-import { Head } from '@components/Head/Head';
+import { Head } from '@components/Head';
 
 export default class Home extends React.Component<any, any> {
   render() {
