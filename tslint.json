@@ -1,6 +1,7 @@
 {
   "extends": [
-    "tslint-config-palmerhq"
+    "tslint-config-palmerhq",
+    "tslint-config-prettier"
   ],
   "maxLineLength": [false]
 }
