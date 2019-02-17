@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-export interface HeadProps {
+export interface SeoProps {
   title?: string;
   description?: string;
   image?: string;
@@ -10,7 +10,7 @@ export interface HeadProps {
 }
 // @see https://github.com/nfl/react-helmet/issues/373
 // Use arrays. lol.
-export const Head: React.SFC<HeadProps> = ({
+export const Seo: React.SFC<SeoProps> = ({
   title,
   image,
   description,
@@ -97,4 +97,4 @@ export const Head: React.SFC<HeadProps> = ({
   );
 };
 
-Head.displayName = 'Head';
+Seo.displayName = 'Head';

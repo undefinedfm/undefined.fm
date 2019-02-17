@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { theme } from '../lib/theme';
+import { theme } from '../../lib/theme';
 import { css } from 'glamor';
 
 export const NavLink: React.SFC<any> = ({ text, hostRef, ...props }) => {

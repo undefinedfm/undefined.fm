@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from 'glamor';
 import { Link } from 'gatsby';
-import { rhythm } from '../lib/typography';
-import { theme } from '../lib/theme';
+import { rhythm } from '../../lib/typography';
+import { theme } from '../../lib/theme';
 
 const stripe = {
   top: 0,

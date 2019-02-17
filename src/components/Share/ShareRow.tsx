@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from 'glamor';
-import { theme } from '../lib/theme';
+import { theme } from '../../lib/theme';
 import { copyToClipboard } from './copyToClipboard';
-import { rhythm } from '../lib/typography';
+import { rhythm } from '../../lib/typography';
 import { IconFacebook } from './IconFacebook';
 import { IconTwitter } from './IconTwitter';
 import * as qs from 'qs';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { theme } from '../lib/theme';
-import { NavLink } from './NavLink';
+import { NavLink } from './Nav/NavLink';
 import { LINKS } from '../lib/constants';
 import { Container } from './Container';
 import { Formik, Form, FieldProps } from 'formik';

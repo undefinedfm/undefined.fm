@@ -2,13 +2,13 @@ import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import format from 'date-fns/format';
 
-import { Nav } from '@components/Nav';
+import { Nav } from '@components/Nav/Nav';
 import { theme } from '../lib/theme';
 import { css } from 'glamor';
 import { scale, rhythm } from '../lib/typography';
 import { Footer } from '@components/Footer';
-import { Head } from '@components/Head';
-import { ShareRow } from '@components/ShareRow';
+import { Seo } from '@components/Seo';
+import { ShareRow } from '@components/Share/ShareRow';
 import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen/Listen';
 import { Bio } from '@components/Bio';
@@ -18,7 +18,7 @@ export default class Episode extends React.Component<any, any> {
     const { episode } = this.props.data;
     return (
       <>
-        <Head
+        <Seo
           title={episode.title}
           description={episode.description}
           slug={episode.fields.slug}

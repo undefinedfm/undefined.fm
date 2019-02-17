@@ -7,16 +7,16 @@ import { css } from 'glamor';
 import { format } from 'date-fns';
 import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen/Listen';
-import { ShareRow } from '@components/ShareRow';
+import { ShareRow } from '@components/Share/ShareRow';
 import { Header } from '../components/Header';
 import { Bio } from '@components/Bio';
-import { Head } from '@components/Head';
+import { Seo } from '@components/Seo';
 
 export default class Home extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <Head
+        <Seo
           title="The Undefined Podcast"
           description="The only engineering podcast with a 2 drink minimum. Hosted by Jared Palmer and Ken Wheeler."
         />
