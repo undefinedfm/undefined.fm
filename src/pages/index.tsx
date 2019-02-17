@@ -18,7 +18,7 @@ export default class Home extends React.Component<any, any> {
       <div>
         <Head
           title="The Undefined Podcast"
-          description="A podcast about JavaScript, crossbows, and other stuff. Hosted by Jared Palmer and Ken Wheeler."
+          description="The only engineering podcast with a 2 drink minimum. Hosted by Jared Palmer and Ken Wheeler."
         />
         <div
           {...css({
