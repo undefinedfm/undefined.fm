@@ -21,6 +21,7 @@
       "@components/*": ["src/components/*"],
       "@forms/*": ["src/forms/*"],
       "@api/*": ["src/api/*"],
+      "@lib/*": ["src/lib/*"],
       "@utils/*": ["src/utils/*"],
       "@screens/*": ["src/screens/*"],
       "@theme": ["src/theme"]

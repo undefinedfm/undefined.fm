@@ -14,6 +14,7 @@ exports.onCreateWebpackConfig = ({ config, actions }) => {
     resolve: {
       alias: {
         '@components': path.join(__dirname, './src/components'),
+        '@lib': path.join(__dirname, './src/lib'),
         '@api': path.join(__dirname, './src/api'),
         '@utils': path.join(__dirname, './src/utils'),
         '@screens': path.join(__dirname, './src/screens'),
