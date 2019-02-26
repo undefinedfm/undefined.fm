@@ -1,6 +1,6 @@
 # [undefined.fm](https://undefined.fm)
 
-This is the source code for https://undefined.fm. It's a [Gatsby](https://github.com/gastbyjs) website built with TypeScript and hosted on Netlify. It uses a custom gatsby source plugin to generate pages for each episode based on the podcast's Simplecast RSS feed. 
+This is the source code for https://undefined.fm. It's a [Gatsby](https://github.com/gatsbyjs) website built with TypeScript and hosted on Netlify. It uses a custom gatsby source plugin to generate pages for each episode based on the podcast's Simplecast RSS feed. 
 
 To run, locally:
 
