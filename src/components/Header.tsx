@@ -22,7 +22,7 @@ export function Header(props: any) {
           opacity: 0.9,
         })}
       >
-        The only engineering podcast with a 2 drink minimum. Hosted by
+        The only engineering podcast with a 2 drink minimum. Hosted by{' '}
         <a
           {...css({ textDecoration: 'none', fontWeight: 700 })}
           href="http://twitter.com/jaredpalmer"
