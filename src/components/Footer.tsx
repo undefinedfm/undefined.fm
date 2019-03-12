@@ -9,12 +9,11 @@ import { Fieldset } from './Fieldset';
 import { css } from 'glamor';
 
 const inputStyles = {
-  appearance: 'none',
+  WebkitAppearance: 'none',
   color: '#fff',
   fontFamily: 'inherit',
   fontStyle: 'inherit',
   verticalAlign: 'baseline',
-  display: 'div',
   position: 'relative',
   margin: '0 0 2rem',
   border: 0,
@@ -44,7 +43,7 @@ export const Footer: React.SFC<FooterProps> = props => {
       role="contentinfo"
       aria-label="Footer"
       id="footer"
-      {...css({ padding: '4rem', textAlign: 'center' })}
+      {...css({ padding: '4rem 0', textAlign: 'center' })}
     >
       <Container>
         <Formik
