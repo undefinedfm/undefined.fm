@@ -131,7 +131,10 @@ export default class Episode extends React.Component<any, any> {
                     <article>
                       <header>
                         <h1
-                          {...css({ color: theme.color.purple, marginTop: 0 })}
+                          {...css({
+                            color: theme.color.purple,
+                            marginTop: 0,
+                          })}
                         >
                           {episode.title}
                         </h1>
@@ -164,13 +167,14 @@ export default class Episode extends React.Component<any, any> {
                           {...css({ marginBottom: rhythm(2) })}
                         />
                       </header>
+
                       <iframe
-                        frameBorder="0"
                         height="200px"
+                        width="100%"
+                        frameBorder="no"
                         scrolling="no"
                         seamless={true}
-                        src={`${episode.embed}?color=fff`}
-                        width="100%"
+                        src={`${episode.embed}?dark=true`}
                       />
                       <div dangerouslySetInnerHTML={{ __html: episode.html }} />
 

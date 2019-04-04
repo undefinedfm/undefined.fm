@@ -55,11 +55,9 @@ function toSlug(s) {
 
 const createChildren = (nodes, parent, createNode) => {
   const children = [];
-
   nodes.forEach(n => {
     const link = toSlug(select(n, 'title'));
     children.push(link);
-
     const node = {
       id: toSlug(select(n, 'title')),
       title: select(n, 'title'),
@@ -71,7 +69,12 @@ const createChildren = (nodes, parent, createNode) => {
       artwork: n['itunes:image'][0]['$']['href'],
       embed: n.enclosure[0]['$']['url']
         .replace('.mp3', '')
-        .replace('audio', 'embed'),
+        // hack @todo
+        .replace('/audio/17ba21/17ba21db-66b5-4612-855e-556b20f60155', '')
+        .replace('https://cdn', 'https://player')
+        .split('/')
+        .slice(0, 4)
+        .join('/'),
       audioUrl: n.enclosure[0]['$']['url'],
       duration: select(n, 'itunes:duration'),
       keywords: select(n, 'itunes:keywords'),
@@ -81,6 +84,7 @@ const createChildren = (nodes, parent, createNode) => {
       children: [],
     };
 
+    // console.log(node);
     node.internal = {
       type: 'Episode',
       contentDigest: digest(node),
@@ -88,31 +92,11 @@ const createChildren = (nodes, parent, createNode) => {
 
     createNode(node);
   });
-
+  // console.log(children);
   return children;
 };
-
-const createFeed = (feed, createNode) => {
-  const link = select(feed, 'link');
-  const children = createChildren(feed.item || [], link, createNode);
-
-  const node = {
-    id: link,
-    title: select(feed, 'title'),
-    description: select(feed, 'description'),
-    parent: null,
-    link,
-    children,
-  };
-
-  node.internal = { type: 'RSSFeed', contentDigest: digest(node) };
-
-  return node;
-};
-
 module.exports = {
   select,
   load,
-  createFeed,
   createChildren,
 };
