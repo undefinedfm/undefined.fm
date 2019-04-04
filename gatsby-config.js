@@ -65,7 +65,7 @@ module.exports = {
       // it extracts the embed URL out of the vanilla RSS feed.
       resolve: 'gatsby-source-simplecast-rss',
       options: {
-        feed: 'https://rss.simplecast.com/podcasts/8781/rss.xml',
+        feed: 'https://feeds.simplecast.com/8lcA0Is7',
       },
     },
     `gatsby-plugin-sitemap`,
