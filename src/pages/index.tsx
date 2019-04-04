@@ -190,7 +190,7 @@ export default class Home extends React.Component<any, any> {
                       </div>
 
                       <p>
-                        {node.description}
+                        {node.description}{' '}
                         <Link
                           to={node.fields.slug}
                           aria-label={`View ${node.title}`}
