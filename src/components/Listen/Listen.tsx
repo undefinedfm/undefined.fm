@@ -27,7 +27,7 @@ export const PODCAST_LINKS: ActionLinkProps[] = [
   {
     src: google,
     href:
-      'https://www.google.com/podcasts?feed=aHR0cHM6Ly9yc3Muc2ltcGxlY2FzdC5jb20vcG9kY2FzdHMvODc4MS9yc3M%3D',
+      'https://www.google.com/podcasts?feed=aHR0cHM6Ly9mZWVkcy5zaW1wbGVjYXN0LmNvbS84bGNBMElzNw%3D%3D',
     text: 'Google Podcast',
   },
   {
