@@ -16,7 +16,7 @@ export interface ListenProps {}
 export const PODCAST_LINKS: ActionLinkProps[] = [
   {
     src: podcast,
-    href: 'https://geo.itunes.apple.com/ca/podcast/feed/id1451541555',
+    href: 'https://podcasts.apple.com/us/podcast/the-undefined-podcast/id1451541555',
     text: 'Apple Podcasts',
   },
   {
