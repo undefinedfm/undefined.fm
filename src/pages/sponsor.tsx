@@ -50,7 +50,7 @@ const Sponsor: React.FC<SponsorProps> = props => {
           marginRight: 0,
         })}
       >
-        <Container {...css({ paddingBottom: rhythm(2) })}>
+        <Container {...css({ paddingBottom: rhythm(2.1) })}>
           <header>
             <h1>Undefined Podcast Sponsorship</h1>
             <p {...css({ fontSize: '1.25rem' })}>
