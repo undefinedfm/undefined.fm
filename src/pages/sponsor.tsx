@@ -39,7 +39,7 @@ const Sponsor: React.FC<SponsorProps> = props => {
         description={
           'Undefined Podcast Sponsorhips, Partnerships, and Activations'
         }
-        slug={'/sponsorships'}
+        slug={'/sponsor'}
       />
       <Nav />
 
