@@ -7,6 +7,7 @@ import { Formik, Form, FieldProps } from 'formik';
 import axios from 'axios';
 import { Fieldset } from './Fieldset';
 import { css } from 'glamor';
+import { Link } from 'gatsby';
 
 const inputStyles = {
   WebkitAppearance: 'none',
@@ -35,9 +36,11 @@ const inputStyles = {
   },
 };
 
-export interface FooterProps {}
+export interface FooterProps {
+  showForm?: boolean;
+}
 
-export const Footer: React.SFC<FooterProps> = props => {
+export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
   return (
     <footer
       role="contentinfo"
@@ -46,49 +49,36 @@ export const Footer: React.SFC<FooterProps> = props => {
       {...css({ padding: '4rem 0', textAlign: 'center' })}
     >
       <Container>
-        <Formik
-          initialValues={{ name: '', email: '' }}
-          onSubmit={(values, { setSubmitting, setStatus }) => {
-            axios
-              .request({
-                url:
-                  'https://api.formik.com/v1/form/5bf8a927daa4d40001e38e2a/submit',
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                data: {
-                  ...values,
-                },
-              })
-              .then(
-                () => {
-                  setSubmitting(false);
-                  setStatus('Success');
-                },
-                e => {
-                  console.log(e);
-                }
-              );
-          }}
-        >
-          {({ status, isSubmitting }) => (
-            <>
-              {status === 'Success' ? (
-                <h2
-                  {...css({
-                    textAlign: 'center',
-                    marginBottom: '1rem',
-                    fontWeight: '700',
-                    fontSize: '1.5rem',
-                    // fontStyle: "italic",
-                    color: theme.color.grayLighter,
-                  })}
-                >
-                  Thanks! We'll keep you posted!
-                </h2>
-              ) : (
-                <Form>
+        {showForm ? (
+          <Formik
+            initialValues={{ name: '', email: '' }}
+            onSubmit={(values, { setSubmitting, setStatus }) => {
+              axios
+                .request({
+                  url:
+                    'https://api.formik.com/v1/form/5bf8a927daa4d40001e38e2a/submit',
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  data: {
+                    ...values,
+                  },
+                })
+                .then(
+                  () => {
+                    setSubmitting(false);
+                    setStatus('Success');
+                  },
+                  e => {
+                    console.log(e);
+                  }
+                );
+            }}
+          >
+            {({ status, isSubmitting }) => (
+              <>
+                {status === 'Success' ? (
                   <h2
                     {...css({
                       textAlign: 'center',
@@ -99,78 +89,93 @@ export const Footer: React.SFC<FooterProps> = props => {
                       color: theme.color.grayLighter,
                     })}
                   >
-                    Subscribe for updates
+                    Thanks! We'll keep you posted!
                   </h2>
-                  <Fieldset
-                    id="name"
-                    name="name"
-                    label="Name"
-                    render={({ field }: FieldProps) => (
-                      <input
-                        {...field}
-                        type="text"
-                        placeholder="Name"
-                        required={true}
-                        {...css(inputStyles)}
-                      />
-                    )}
-                  />
-                  <Fieldset
-                    label="Email"
-                    id="email"
-                    name="email"
-                    render={({ field, form }: FieldProps) => (
-                      <input
-                        {...field}
-                        type="email"
-                        placeholder="Email"
-                        required={true}
-                        {...css(inputStyles)}
-                      />
-                    )}
-                  />
-                  <button
-                    type="submit"
-                    {...css({
-                      padding: '1rem 1.25rem',
-                      minWidth: 200,
-                      margin: '3rem auto',
-                      display: 'div',
-                      position: 'relative',
-                      textTransform: 'uppercase',
-                      borderRadius: 40,
-                      border: '0',
-                      fontSize: '1rem',
-                      textAlign: 'center',
-                      fontWeight: theme.bold,
-                      transform: 'translateY(0)',
-                      cursor: 'pointer',
-                      color: '#000',
-                      background: theme.color.purple,
-                      // fontStyle: "italic",
-                      backgroundImage: `linear-gradient(-134deg, ${
-                        theme.color.purple
-                      } 0%, #00FFF4 100%)`,
+                ) : (
+                  <Form>
+                    <h2
+                      {...css({
+                        textAlign: 'center',
+                        marginBottom: '1rem',
+                        fontWeight: '700',
+                        fontSize: '1.5rem',
+                        // fontStyle: "italic",
+                        color: theme.color.grayLighter,
+                      })}
+                    >
+                      Subscribe for updates
+                    </h2>
+                    <Fieldset
+                      id="name"
+                      name="name"
+                      label="Name"
+                      render={({ field }: FieldProps) => (
+                        <input
+                          {...field}
+                          type="text"
+                          placeholder="Name"
+                          required={true}
+                          {...css(inputStyles)}
+                        />
+                      )}
+                    />
+                    <Fieldset
+                      label="Email"
+                      id="email"
+                      name="email"
+                      render={({ field, form }: FieldProps) => (
+                        <input
+                          {...field}
+                          type="email"
+                          placeholder="Email"
+                          required={true}
+                          {...css(inputStyles)}
+                        />
+                      )}
+                    />
+                    <button
+                      type="submit"
+                      {...css({
+                        padding: '1rem 1.25rem',
+                        minWidth: 200,
+                        margin: '3rem auto',
+                        display: 'div',
+                        position: 'relative',
+                        textTransform: 'uppercase',
+                        borderRadius: 40,
+                        border: '0',
+                        fontSize: '1rem',
+                        textAlign: 'center',
+                        fontWeight: theme.bold,
+                        transform: 'translateY(0)',
+                        cursor: 'pointer',
+                        color: '#000',
+                        background: theme.color.purple,
+                        // fontStyle: "italic",
+                        backgroundImage: `linear-gradient(-134deg, ${
+                          theme.color.purple
+                        } 0%, #00FFF4 100%)`,
 
-                      transition: 'all 100ms ease',
-                      '&:hover': {
-                        boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
-                      },
-                      '&:hover:active': {
-                        transform: `scale(.98)`,
-                      },
-                    })}
-                  >
-                    {isSubmitting ? 'Loading....' : 'Subscribe'}
-                  </button>
-                </Form>
-              )}
-            </>
-          )}
-        </Formik>
+                        transition: 'all 100ms ease',
+                        '&:hover': {
+                          boxShadow: `0 4px 8px rgba(0,0,0,.1)`,
+                        },
+                        '&:hover:active': {
+                          transform: `scale(.98)`,
+                        },
+                      })}
+                    >
+                      {isSubmitting ? 'Loading....' : 'Subscribe'}
+                    </button>
+                  </Form>
+                )}
+              </>
+            )}
+          </Formik>
+        ) : null}
         <div
           {...css({
-            margin: '6rem auto 2rem',
+            margin: showForm ? '6rem auto 2rem' : '2rem auto 2rem',
             display: 'flex',
             flexDirection: 'column',
             [theme.media.medium]: {
@@ -178,17 +183,70 @@ export const Footer: React.SFC<FooterProps> = props => {
               alignItems: 'center',
               textAlign: 'center',
               flexWrap: 'wrap',
-              justifyContent: 'space-between',
+              justifyContent: 'space-around',
             },
           })}
         >
           {LINKS.map(item => (
             <NavLink key={`footer-${item.text}`} {...item} />
           ))}
+          <Link
+            {...css({
+              color: theme.color.purple,
+              textTransform: 'uppercase',
+              fontSize: '.9rem',
+              transition: 'color 200ms ease-in',
+              margin: '.5rem',
+              '&:hover': {
+                color: theme.color.white,
+              },
+            })}
+            to="/sponsor"
+          >
+            Sponsor the Podcast
+          </Link>
         </div>
-        <NavLink text="Sponsor an Episode" href="mailto:hello@undefined.fm" />
         <div {...css({ fontSize: '.8rem', color: theme.color.gray })}>
-          Copyright © 2019 The Palmer Group.
+          Copyright © 2019{' '}
+          <a
+            href="https://palmer.net"
+            {...css({
+              marginTop: '1.25rem',
+              transition: 'color .2s ease-out',
+              color: theme.color.gray,
+              textDecoration: 'underline',
+              ':hover': {
+                color: theme.color.purple,
+              },
+            })}
+          >
+            The Palmer Group
+          </a>
+          .
+        </div>
+        <div
+          {...css({
+            fontSize: 12,
+            color: theme.color.gray,
+            marginTop: '1.25rem',
+            transition: 'color .2s ease-out',
+            '& a': {
+              color: theme.color.gray,
+              textDecoration: 'underline',
+            },
+            '& a:hover': {
+              color: theme.color.purple,
+            },
+          })}
+        >
+          {' '}
+          This site was built with{' '}
+          <a href="https://github.com/facebook/react">React</a>,{' '}
+          <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>, and{' '}
+          <a href="https://github.com/threepointone/glamor">Glamor</a>. It is
+          hosted on <a href="https://netlify.com">Netlify</a> and the source
+          code is on{' '}
+          <a href="https://github.com/undefinedfm/undefined.fm">GitHub</a>.
         </div>
       </Container>
     </footer>

@@ -12,7 +12,7 @@ export const LINKS = [
     href: 'https://twitter.com/ken_wheeler',
   },
   {
-    text: 'Contact',
-    href: 'https://palmer.net/contact',
+    text: 'Contact Us',
+    href: 'mailto:hello@undefined.fm',
   },
 ];
