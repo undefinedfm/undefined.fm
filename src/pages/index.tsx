@@ -189,17 +189,15 @@ export default class Home extends React.Component<any, any> {
                         </div>
                       </div>
 
-                      <p
-                        style={{ marginBottom: '1rem' }}
-                        dangerouslySetInnerHTML={{ __html: node.description }}
-                      />
-                      <Link
-                        {...css({ marginBottom: '2rem', display: 'block' })}
-                        to={node.fields.slug}
-                        aria-label={`View ${node.title}`}
-                      >
-                        Listen to Episode →
-                      </Link>
+                      <p>
+                        {node.description}{' '}
+                        <Link
+                          to={node.fields.slug}
+                          aria-label={`View ${node.title}`}
+                        >
+                          Listen to Episode →
+                        </Link>
+                      </p>
                     </div>
                   )
                 )}

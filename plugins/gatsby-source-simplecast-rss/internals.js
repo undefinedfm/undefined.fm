@@ -61,7 +61,7 @@ const createChildren = (nodes, parent, createNode) => {
     const node = {
       id: toSlug(select(n, 'title')),
       title: select(n, 'title'),
-      description: select(n, 'description'),
+      description: select(n, 'itunes:summary'),
       html: select(n, 'content:encoded'),
       // Fix the date
       date: new Date(select(n, 'pubDate')).toISOString(),
