@@ -26,28 +26,50 @@ export default class Episode extends React.Component<any, any> {
         />
         <div
           {...css({
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 9999,
+            backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
+          })}
+        >
+          <a
+            href="https://shop.undefined.fm"
+            {...css({
+              display: 'block',
+              padding: `.25rem 2rem`,
+              textAlign: 'center',
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: 'bold',
+            })}
+          >
+            <span {...css({ [theme.media.large]: { display: 'none ' } })}>
+              Our new store is live! Get your swag on{' '}
+            </span>
+            <span
+              {...css({
+                display: 'none',
+                [theme.media.large]: { display: 'inline' },
+              })}
+            >
+              Our new store is live! Get your swag on with offical Undefined
+              gear{' '}
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div
+          {...css({
             display: 'block',
             [theme.media.medium]: { display: 'none' },
           })}
         >
-          <Nav />
+          <Nav showStripe={false} />
         </div>
         <div>
           <div
             {...css({
-              top: 0,
-              left: 0,
-              right: 0,
-              zIndex: 9999,
-              height: 4,
-              backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
-              display: 'none',
-              [theme.media.medium]: { display: 'block' },
-            })}
-          />
-          <div
-            {...css({
-              // maxWidth: 675,
               [theme.media.medium]: { maxWidth: 968 },
               margin: '0 auto',
               padding: '0 1rem',
@@ -132,7 +154,7 @@ export default class Episode extends React.Component<any, any> {
                       <header>
                         <h1
                           {...css({
-                            color: theme.color.purple,
+                            color: theme.color.white,
                             marginTop: 0,
                           })}
                         >

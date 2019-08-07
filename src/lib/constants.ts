@@ -1,5 +1,13 @@
 export const LINKS = [
   {
+    text: 'Podcast',
+    href: 'https://undefined.fm',
+  },
+  {
+    text: 'Shop',
+    href: 'https://shop.undefined.fm',
+  },
+  {
     text: '@theundefinedio',
     href: 'https://twitter.com/theundefinedio',
   },

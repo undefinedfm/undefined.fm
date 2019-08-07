@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { rhythm } from '../../lib/typography';
 import { theme } from '../../lib/theme';
 
-const stripe = {
+const stripeStyles = {
   top: 0,
   left: 0,
   right: 0,
@@ -13,7 +13,7 @@ const stripe = {
   backgroundImage: `linear-gradient(left, #00FFF4 0%, #DB00FF 100%)`,
 };
 
-export function Nav() {
+export function Nav({ showStripe = true }: { showStripe?: boolean }) {
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ export function Nav() {
         width: '100%',
       }}
     >
-      <div {...css(stripe)} />
+      {showStripe ? <div {...css(stripeStyles)} /> : null}
       <div
         {...css({
           padding: 16,

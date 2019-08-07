@@ -26,10 +26,35 @@ export default class Home extends React.Component<any, any> {
             left: 0,
             right: 0,
             zIndex: 9999,
-            height: 4,
             backgroundImage: `linear-gradient(left, #0ef 0%, #F249CF 100%)`,
           })}
-        />
+        >
+          <a
+            href="https://shop.undefined.fm"
+            {...css({
+              display: 'block',
+              padding: `.25rem 2rem`,
+              textAlign: 'center',
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: 'bold',
+            })}
+          >
+            <span {...css({ [theme.media.large]: { display: 'none ' } })}>
+              Our new store is live! Get your swag on{' '}
+            </span>
+            <span
+              {...css({
+                display: 'none',
+                [theme.media.large]: { display: 'inline' },
+              })}
+            >
+              Our new store is live! Get your swag on with offical Undefined
+              gear{' '}
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
         <div
           {...css({
             maxWidth: 675,
@@ -174,7 +199,7 @@ export default class Home extends React.Component<any, any> {
                           >
                             <h2
                               {...css({
-                                color: theme.color.purple,
+                                color: '#fff',
                                 marginTop: 0,
                                 fontSize: rhythm(1),
                                 ':hover': {
