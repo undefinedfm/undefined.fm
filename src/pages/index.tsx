@@ -238,7 +238,7 @@ export default class Home extends React.Component<any, any> {
 
 export const query = graphql`
   {
-    allEpisode(sort: { fields: [date], order: DESC }, limit: 10) {
+    allEpisode(sort: { fields: [date], order: DESC }, limit: 100) {
       edges {
         node {
           id
