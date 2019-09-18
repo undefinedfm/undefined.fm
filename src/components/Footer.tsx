@@ -57,7 +57,7 @@ export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
                 axios
                   .request({
                     url:
-                      'https://api.formik.com/v1/form/5bf8a927daa4d40001e38e2a/submit',
+                      'https://api.formik.com/submit/undefinedfm/subscribe',
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
@@ -72,6 +72,8 @@ export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
                       setStatus('Success');
                     },
                     e => {
+                      setSubmitting(false);
+                      setStatus()
                       console.log(e);
                     }
                   );
@@ -145,6 +147,7 @@ export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
                           textTransform: 'uppercase',
                           borderRadius: 40,
                           border: '0',
+                          outline: 0,
                           fontSize: '1rem',
                           textAlign: 'center',
                           fontWeight: theme.bold,
