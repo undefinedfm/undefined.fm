@@ -50,7 +50,7 @@ export const Seo: React.SFC<SeoProps> = ({
             },
             {
               property: 'og:url',
-              content: `https://undefined.fm${slug}`,
+              content: `https://theundefined.io${slug}`,
             },
             {
               property: 'og:site_name',

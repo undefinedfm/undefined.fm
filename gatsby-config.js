@@ -3,7 +3,7 @@
 module.exports = {
   siteMetadata: {
     siteName: `The Undefined Podcast`,
-    siteUrl: `https://undefined.fm`,
+    siteUrl: `https://theundefined.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://undefined.fm`,
+        siteUrl: `https://theundefined.io`,
       },
     },
     {

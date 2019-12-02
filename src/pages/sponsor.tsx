@@ -343,7 +343,7 @@ const Sponsor: React.FC<SponsorProps> = props => {
             </ol>
             <h2>Contact Us</h2>
             <p>
-              Please <a href="mailto:hello@undefined.fm">send us an email</a> if
+              Please <a href="mailto:hello@theundefined.io">send us an email</a> if
               you are interested in working together and sponsoring the podcast.
             </p>
           </Container>

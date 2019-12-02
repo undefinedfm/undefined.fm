@@ -58,6 +58,7 @@ const createChildren = (nodes, parent, createNode) => {
   nodes.forEach(n => {
     const link = toSlug(select(n, 'title'));
     children.push(link);
+    throw new Error('fuck');
     const node = {
       id: toSlug(select(n, 'title')),
       title: select(n, 'title'),
