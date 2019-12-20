@@ -1,11 +1,11 @@
 export const LINKS = [
   {
     text: 'Podcast',
-    href: 'https://theundefined.io',
+    href: 'https://undefined.fm',
   },
   {
     text: 'Shop',
-    href: 'https://shop.theundefined.io',
+    href: 'https://shop.undefined.fm',
   },
   {
     text: '@theundefinedio',
@@ -21,6 +21,6 @@ export const LINKS = [
   },
   {
     text: 'Contact Us',
-    href: 'mailto:hello@theundefined.io',
+    href: 'mailto:hello@undefined.fm',
   },
 ];

@@ -30,7 +30,7 @@ export default class Home extends React.Component<any, any> {
           })}
         >
           <a
-            href="https://shop.theundefined.io"
+            href="https://shop.undefined.fm"
             {...css({
               display: 'block',
               padding: `.25rem 2rem`,
