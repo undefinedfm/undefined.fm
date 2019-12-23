@@ -58,6 +58,14 @@ const createChildren = (nodes, parent, createNode) => {
   nodes.forEach(n => {
     const link = toSlug(select(n, 'title'));
     children.push(link);
+    let artwork;
+
+    try {
+      artwork = n['itunes:image'][0]['$']['href'];
+    } catch (error) {
+      artwork =
+        'https://cdn.simplecast.com/images/17ba21db-66b5-4612-855e-556b20f60155/f68307f3-2a3c-4109-aa37-59ad38005049/3000x3000/1549548387artwork.jpg';
+    }
 
     const node = {
       id: toSlug(select(n, 'title')),
@@ -67,7 +75,7 @@ const createChildren = (nodes, parent, createNode) => {
       // Fix the date
       date: new Date(select(n, 'pubDate')).toISOString(),
       // Extract out the embed URL
-      artwork: n['itunes:image'][0]['$']['href'],
+      artwork,
       embed: n.enclosure[0]['$']['url']
         .replace('.mp3', '')
         // hack @todo
