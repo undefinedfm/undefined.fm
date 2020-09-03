@@ -59,7 +59,7 @@
     "react-pose": "^2.1.2",
     "react-typography": "^0.16.18",
     "request": "^2.87.0",
-    "serve": "^9.2.0",
+    "serve": "^10.1.2",
     "ts-loader": "^4.3.0",
     "tslint": "^5.12.1",
     "typescript": "^2.8.3",
