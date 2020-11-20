@@ -19,7 +19,7 @@ const Container = (props: any) => (
     {...props}
   />
 );
-const Sponsor: React.FC<SponsorProps> = props => {
+const Sponsor: React.FC<SponsorProps> = (props) => {
   return (
     <div {...css({ color: '#fff' })}>
       <div
@@ -72,9 +72,9 @@ const Sponsor: React.FC<SponsorProps> = props => {
           </p>
           <p>Some combined stats between Ken &amp; Jared:</p>
           <ul>
-            <li>95k+ GitHub stars</li>
-            <li>30k+ Twitter Followers</li>
-            <li>6.5k+ GitHub Followers</li>
+            <li>125k+ GitHub stars</li>
+            <li>55k+ Twitter Followers</li>
+            <li>10k+ GitHub Followers</li>
           </ul>
         </Container>
         <div
