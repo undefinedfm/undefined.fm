@@ -212,9 +212,9 @@ export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
           </Link>
         </div>
         <div {...css({ fontSize: '.8rem', color: theme.color.gray })}>
-          Copyright © 2019{' '}
+          Copyright © 2020{' '}
           <a
-            href="https://palmer.net"
+            href="https://jaredpalmer.com"
             {...css({
               marginTop: '1.25rem',
               transition: 'color .2s ease-out',
@@ -225,7 +225,7 @@ export const Footer: React.SFC<FooterProps> = ({ showForm = true }) => {
               },
             })}
           >
-            The Palmer Group
+            Jared Palmer
           </a>
           .
         </div>

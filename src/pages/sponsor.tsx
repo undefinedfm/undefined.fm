@@ -228,10 +228,10 @@ const Sponsor: React.FC<SponsorProps> = (props) => {
           <Container>
             <h2>Audience Size and Breakdown</h2>
             <p>
-              Our episodes receive an average of 7000 downloads. Our live shows
-              (streamed to YouTube, Twitch, and Periscope) average 4000 viewers.
-              While exact numbers are hard to get, here are a few bits of info
-              about our audience that should give you an idea of who is
+              Our episodes receive an average of 7,000 downloads. Our live shows
+              (streamed to YouTube, Twitch, and Periscope) average 4,000
+              viewers. While exact numbers are hard to get, here are a few bits
+              of info about our audience that should give you an idea of who is
               listening:
             </p>
             <ul>
@@ -337,7 +337,10 @@ const Sponsor: React.FC<SponsorProps> = (props) => {
                 A 1-2 min sponsor spot midway during the episode. While we can
                 do a regular ad read, we have found that having Ken or Jared
                 talk about the product or service and their experience with it
-                gives it authenticity. A thank-you tweet from{' '}
+                gives it authenticity.
+              </li>
+              <li>
+                A thank-you tweet from{' '}
                 <a href="http://twitter.com/theundefinedio">@theundefinedio</a>{' '}
                 with a link to your product or service from the show's Twitter
                 account.
