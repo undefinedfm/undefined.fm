@@ -228,9 +228,11 @@ const Sponsor: React.FC<SponsorProps> = (props) => {
           <Container>
             <h2>Audience Size and Breakdown</h2>
             <p>
-              Our episodes receive an average of 7000 downloads. While exact
-              numbers are hard to get, here are a few bits of info about our
-              audience that should give you an idea of who is listening:
+              Our episodes receive an average of 7000 downloads. Our live shows
+              (streamed to YouTube, Twitch, and Periscope) average 4000 viewers.
+              While exact numbers are hard to get, here are a few bits of info
+              about our audience that should give you an idea of who is
+              listening:
             </p>
             <ul>
               <li>
