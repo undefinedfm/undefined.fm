@@ -73,15 +73,15 @@ export const Seo: React.SFC<SeoProps> = ({
                 },
             {
               name: 'twitter:image',
-              content:
-                image ||
-                'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
+              content: !!image
+                ? `https://undefined.fm${image}`
+                : 'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
             },
             {
               name: 'og:image',
-              content:
-                image ||
-                'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
+              content: !!image
+                ? `https://undefined.fm${image}`
+                : 'https://media.simplecast.com/podcast/image/8781/1549548387-artwork.jpg',
             },
             {
               name: 'apple-itunes-app',
