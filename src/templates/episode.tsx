@@ -12,7 +12,7 @@ import { ShareRow } from '@components/Share/ShareRow';
 import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen/Listen';
 import { Bio } from '@components/Bio';
-import ogSpecial from './og-special.png';
+import ogSpecial from './og-special.jpg';
 export default class Episode extends React.Component<any, any> {
   render() {
     const { episode } = this.props.data;
