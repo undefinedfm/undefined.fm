@@ -4,7 +4,6 @@ import google from './google-podcasts.png';
 import googlePlay from './google-play.png';
 import overcast from './overcast.png';
 import pocket from './pocket-casts.png';
-import anchor from './anchor.jpg';
 import castro from './castro.svg';
 import spotify from './spotify.png';
 import rss from './rss.png';
@@ -16,7 +15,8 @@ export interface ListenProps {}
 export const PODCAST_LINKS: ActionLinkProps[] = [
   {
     src: podcast,
-    href: 'https://podcasts.apple.com/us/podcast/the-undefined-podcast/id1451541555?mt=2&app=itunes',
+    href:
+      'https://podcasts.apple.com/us/podcast/the-undefined-podcast/id1451541555?mt=2&app=itunes',
     text: 'Apple Podcasts',
   },
   {
@@ -40,11 +40,6 @@ export const PODCAST_LINKS: ActionLinkProps[] = [
     href:
       'https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Iuluvwqlkrf5tqh75f5b4x7xxym?t%3DThe_Undefined_Podcast%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16',
     text: 'Google Play',
-  },
-  {
-    src: anchor,
-    href: 'https://anchor.fm/the-undefined-podcast',
-    text: 'Anchor',
   },
   {
     src: overcast,
@@ -77,7 +72,7 @@ export function Listen(props: ListenProps) {
         margin: '0 auto',
       })}
     >
-      {PODCAST_LINKS.map(i => (
+      {PODCAST_LINKS.map((i) => (
         <ActionLink key={i.href} {...i} />
       ))}
     </div>
