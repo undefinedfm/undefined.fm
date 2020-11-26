@@ -12,17 +12,19 @@ import { ShareRow } from '@components/Share/ShareRow';
 import { Logo } from '@components/Logo';
 import { Listen } from '@components/Listen/Listen';
 import { Bio } from '@components/Bio';
-
+import ogSpecial from './og-special.png';
 export default class Episode extends React.Component<any, any> {
   render() {
     const { episode } = this.props.data;
+
     return (
       <>
         <Seo
           title={episode.title}
           description={episode.description}
           slug={episode.fields.slug}
-          image={episode.artwork}
+          large={!!episode.title.includes('Svelte')}
+          image={episode.title.includes('Svelte') ? ogSpecial : episode.artwork}
         />
         <div
           {...css({

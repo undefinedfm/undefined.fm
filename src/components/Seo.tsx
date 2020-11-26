@@ -7,6 +7,7 @@ export interface SeoProps {
   image?: string;
   children?: any;
   slug?: string;
+  large?: boolean;
 }
 // @see https://github.com/nfl/react-helmet/issues/373
 // Use arrays. lol.
@@ -16,6 +17,7 @@ export const Seo: React.SFC<SeoProps> = ({
   description,
   children,
   slug,
+  large,
   ...rest
 }) => {
   return (
@@ -60,10 +62,15 @@ export const Seo: React.SFC<SeoProps> = ({
               property: 'og:locale',
               content: `en_US`,
             },
-            {
-              name: 'twitter:card',
-              content: 'summary',
-            },
+            large
+              ? {
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
+                }
+              : {
+                  name: 'twitter:card',
+                  content: 'summary',
+                },
             {
               name: 'twitter:image',
               content:
