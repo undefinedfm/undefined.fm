@@ -51,7 +51,7 @@
     "gatsby-transformer-sharp": "^2.2.14",
     "glamor": "^2.20.40",
     "popmotion": "^8.2.2",
-    "qs": "^6.5.2",
+    "qs": "^6.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-helmet": "^5.2.0",
