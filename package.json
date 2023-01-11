@@ -47,7 +47,7 @@
     "gatsby-remark-responsive-image": "^1.0.0-alpha13-alpha.435e0178",
     "gatsby-source-atom": "^0.2.0",
     "gatsby-source-filesystem": "^2.0.0-alpha.13",
-    "gatsby-transformer-remark": "^2.0.1-11",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.14",
     "glamor": "^2.20.40",
     "popmotion": "^8.2.2",
