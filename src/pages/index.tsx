@@ -110,7 +110,7 @@ export default class Home extends React.Component<any, any> {
                 <Bio
                   name="Jared Palmer"
                   twitterHandle="jaredpalmer"
-                  avatarUrl="https://pbs.twimg.com/profile_images/892351529348411392/FLQyLnoc_400x400.jpg"
+                  avatarUrl="https://pbs.twimg.com/profile_images/1593971470916636676/uip-eVID_400x400.jpg"
                 />
                 <Bio
                   name="Ken Wheeler"
